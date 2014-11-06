@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 #include <boost/asio.hpp>
 #include <events/req_login.h>
 #include <events/res_login.h>
+#include <libs/apdos/kernel/kernel.h>
 #include <libs/apdos/kernel/actor/actor.h>
 #include <libs/apdos/kernel/actor/actor_connecter.h>
 
@@ -11,25 +13,29 @@ using namespace boost::system;
 using namespace boost::asio;
 using namespace boost::asio::ip;
 
+using namespace apdos::kernel;
 using namespace apdos::kernel::actor;
 using namespace apdos::plugins::dchat_connecter;
 
-const char SERVER_IP[] = "211.50.119.84";
-const unsigned short PORT_NUMBER = 10001;
-
 int main() {
-	io_service io_service;
-	tcp::endpoint endpoint(address::from_string(SERVER_IP), PORT_NUMBER);
-	system::error_code connect_error;
-	tcp::socket socket(io_service);
-	socket.connect(endpoint, connect_error);
-	if (connect_error) {
-		std::cout << "Connect failed. error no: " << connect_error.value() 
-			<< ", message: " << connect_error.message() << std::endl;
-	}
+  boost::shared_ptr<Kernel> k = Kernel::get_instance();
+  Kernel::get_instance();
+  Kernel::get_instance();
+
 	Actor* actor = new Actor("/sys/connecter");
 	boost::shared_ptr<Actor_Connecter> connecter = actor->add_component<Actor_Connecter>();
-	Req_Login req_login("test_user1");
-	connecter->send_by_path("/sys", "/sys/preqenters/server_presenter", req_login);
+  connecter->connect("tcp://211.50.119.84:10001");
+  std::string buffer;	
+  while (std::getline(std::cin, buffer)) {
+    if (0 == buffer.compare("login")) {
+      //tokens
+      Req_Login req_login("test");
+      connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_login);
+    }
+
+    if (0 == buffer.compare("exit"))
+      break;
+  }
+  connecter->disconnect();
 	return 0;
 }

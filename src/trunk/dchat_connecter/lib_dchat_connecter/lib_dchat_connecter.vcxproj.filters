@@ -40,6 +40,9 @@
     <Filter Include="libs\apdos\kernel\actor\events">
       <UniqueIdentifier>{9ff23ff5-0bd7-4fba-97dc-2606110eec75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libs\apdos\kernel\actor\errors">
+      <UniqueIdentifier>{c7b991d7-1adc-456a-ba83-2bd300e86e2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="events\req_login.h">
