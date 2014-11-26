@@ -13,13 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="models\events">
+      <UniqueIdentifier>{5b094609-26d5-497f-98d0-633ef452b0ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="presenters">
+      <UniqueIdentifier>{e8afef10-ea81-428b-ade9-0ca38df88ac0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>entry</Filter>
     </ClCompile>
+    <ClCompile Include="models\line_input.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\events\line_input_event.cpp">
+      <Filter>models\events</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\lib-dchat-connecter\lib-dchat-connecter.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="models\line_input.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\events\line_input_event.h">
+      <Filter>models\events</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

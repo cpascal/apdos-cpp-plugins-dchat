@@ -78,9 +78,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="models\events\line_input_event.cpp" />
+    <ClCompile Include="models\line_input.cpp" />
+    <ClCompile Include="presenters\cmd_presenter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\lib-dchat-connecter\lib-dchat-connecter.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="models\events\line_input_event.h" />
+    <ClInclude Include="models\line_input.h" />
+    <ClInclude Include="presenters\cmd_presenter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

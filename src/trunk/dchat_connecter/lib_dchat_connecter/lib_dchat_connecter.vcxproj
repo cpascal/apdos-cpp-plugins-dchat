@@ -72,6 +72,7 @@
     <ClInclude Include="libs\apdos\kernel\actor\component.h" />
     <ClInclude Include="libs\apdos\kernel\actor\events\proxy_event.h" />
     <ClInclude Include="libs\apdos\kernel\event\event.h" />
+    <ClInclude Include="libs\apdos\kernel\event\event_dispatcher.h" />
     <ClInclude Include="libs\apdos\kernel\kernel.h" />
     <ClInclude Include="libs\apdos\libs\json\autolink.h" />
     <ClInclude Include="libs\apdos\libs\json\config.h" />
@@ -91,6 +92,7 @@
     <ClCompile Include="libs\apdos\kernel\actor\component.cpp" />
     <ClCompile Include="libs\apdos\kernel\actor\events\proxy_event.cpp" />
     <ClCompile Include="libs\apdos\kernel\event\event.cpp" />
+    <ClCompile Include="libs\apdos\kernel\event\event_dispatcher.cpp" />
     <ClCompile Include="libs\apdos\kernel\kernel.cpp" />
     <ClCompile Include="libs\apdos\libs\json\json_reader.cpp" />
     <ClCompile Include="libs\apdos\libs\json\json_value.cpp" />
