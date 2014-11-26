@@ -105,7 +105,8 @@ std::vector<std::string> Actor_Connecter::get_messages() {
 }
 
 bool Actor_Connecter::has_fragment_message(std::vector<std::string>& messages) {
-  return messages[messages.size() - 1].find("}") == std::string::npos ? true : false;
+  size_t last = messages[messages.size() - 1].length() - 1;
+  return messages[messages.size() - 1].compare(last, 1, "}") == std::string::npos ? true : false;
 }
 
 std::vector<std::string> Actor_Connecter::get_address_tokens(std::string address) {

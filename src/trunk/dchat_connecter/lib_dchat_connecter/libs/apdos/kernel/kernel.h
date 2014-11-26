@@ -10,6 +10,12 @@ namespace apdos {
         Kernel();
         virtual ~Kernel();
 
+        template <class T>        
+        boost::shared_ptr<T> new_object(std::string path) {
+          boost::shared_ptr<T> result(new T(path));
+          return result;
+        }
+
       public:
         static boost::shared_ptr<Kernel> get_instance();
     };

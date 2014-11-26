@@ -1,24 +1,33 @@
-#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_LINE_INPUT_H
-#define APDOS_PLUGINS_DCHAT_CONNECTER_LINE_INPUT_H
+#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_CCLIENT_MODELS_LINE_INPUT_H
+#define APDOS_PLUGINS_DCHAT_CONNECTER_CCLIENT_MODELS_LINE_INPUT_H
 
 #include <boost/asio.hpp>
+#include <libs/apdos/kernel/actor/component.h>
+#include <libs/apdos/kernel/event/event.h>
 
 namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
-      class Line_Input {
-      public:
-        Line_input(boost::asio::io_service& io_service):
-          io_service(ios_service) {
-        }
+      namespace cclient {
+        namespace models {
+          class Line_Input: public apdos::kernel::actor::Component {
+          public:
+            Line_Input();
+            virtual ~Line_Input();
 
-      private:
-        boost::asio::io_service& io_service;
-        boost::asio::streambuf input_buffer;
-        boost::asio::windows::stream_
+            /**
+             * 유저의 입력을 받아들인다.
+             */
+            void poll();
+            void stop();
+
+          private:
+            bool is_stop;
+          };
+        }
       }
     }
   }
 }
 
-#endif //APDOS_PLUGINS_DCHAT_CONNECTER_LINE_INPUT_H
+#endif //APDOS_PLUGINS_DCHAT_CONNECTER_CCLIENT_MODELS_LINE_INPUT_H

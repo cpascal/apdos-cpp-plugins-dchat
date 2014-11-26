@@ -11,6 +11,7 @@ namespace apdos {
       class Actor {
       public:
         Actor(std::string path);
+        virtual ~Actor();
 
         template <class T>
         boost::shared_ptr<T> add_component() { 
