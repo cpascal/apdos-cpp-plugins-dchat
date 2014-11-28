@@ -83,6 +83,11 @@
     <ClInclude Include="libs\apdos\libs\json\reader.h" />
     <ClInclude Include="libs\apdos\libs\json\value.h" />
     <ClInclude Include="libs\apdos\libs\json\writer.h" />
+    <ClInclude Include="libs\apdos\plugins\uuid\object_id.h" />
+    <ClInclude Include="models\auth.h" />
+    <ClInclude Include="models\user.h" />
+    <ClInclude Include="presenters\client_listener_presenter.h" />
+    <ClInclude Include="presenters\client_presenter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="events\req_login.cpp" />
@@ -97,6 +102,11 @@
     <ClCompile Include="libs\apdos\libs\json\json_reader.cpp" />
     <ClCompile Include="libs\apdos\libs\json\json_value.cpp" />
     <ClCompile Include="libs\apdos\libs\json\json_writer.cpp" />
+    <ClCompile Include="libs\apdos\plugins\uuid\object_id.cpp" />
+    <ClCompile Include="models\auth.cpp" />
+    <ClCompile Include="models\user.cpp" />
+    <ClCompile Include="presenters\client_listener_presenter.cpp" />
+    <ClCompile Include="presenters\client_presenter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libs\apdos\libs\json\json_internalarray.inl" />

@@ -16,10 +16,11 @@ namespace apdos {
           static const char* PROXY_EVENT;
 
         public:
+          Proxy_Event();
           Proxy_Event(std::string sender_path, std::string receiver_path, apdos::kernel::event::Event remote_event);
 
         private:
-          std::map<const char*, boost::any> create_event_data(
+          boost::shared_ptr<std::map<const char*, boost::any>> create_event_data(
             std::string sender_path, 
             std::string receiver_path, 
             apdos::kernel::event::Event remote_event);

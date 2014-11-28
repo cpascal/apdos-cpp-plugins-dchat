@@ -4,6 +4,7 @@
 #include <boost/tokenizer.hpp>
 #include <boost/bind.hpp>
 #include <boost/lexical_cast.hpp>
+#include <libs/apdos/kernel/actor/events/proxy_event.h>
 
 typedef boost::tokenizer<boost::char_separator<char>> tokenizer;
 
@@ -65,18 +66,20 @@ void Actor_Connecter::handle_read(const boost::system::error_code& error, size_t
 
   std::vector<std::string> messages = get_messages();
 
-  std::cout << "messages count: " << messages.size() << std::endl;
-  for (int i = 0; i < messages.size(); ++i)
-    std::cout << "token:" << messages[i] << std::endl;
+  std::cout << "messages count: " << messages.size() << std::endl; 
 
   if (has_fragment_message(messages)) {
+    for (int i = 0; i < messages.size(); ++i)
+      std::cout << "token:" << messages[i] << std::endl;
+
     std::string fragment_data = messages[messages.size() - 1];
     read_index = fragment_data.length();
     recv_buffer.assign(READ_BUFFER_SIZE, 0);
     std::copy(fragment_data.begin(), fragment_data.end(), recv_buffer.begin());
 
     for (int i = 0; i < messages.size() - 1; ++i) {
-      std::cout << "1Event: " << messages[i] << std::endl;
+      std::cout << "Recv Event-1: " << messages[i] << std::endl;
+      this->process_event(messages[i]);
     }
   }
   else {
@@ -84,12 +87,19 @@ void Actor_Connecter::handle_read(const boost::system::error_code& error, size_t
     recv_buffer.assign(READ_BUFFER_SIZE, 0);
 
     for (int i = 0; i < messages.size(); ++i) {
-      std::cout << "2Event: " << messages[i] << std::endl;
+      std::cout << "Recv Event-2: " << messages[i] << std::endl;
+      this->process_event(messages[i]);
     }
   }
 
   socket.async_read_some(boost::asio::buffer(recv_data, READ_BUFFER_SIZE), 
     boost::bind(&Actor_Connecter::handle_read, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred)); 
+}
+
+void Actor_Connecter::process_event(std::string message) {
+  return;
+  boost::shared_ptr<Proxy_Event> proxy_event = boost::shared_ptr<Proxy_Event>(new Proxy_Event());
+  proxy_event->deserialize(message);
 }
 
 std::vector<std::string> Actor_Connecter::get_messages() {

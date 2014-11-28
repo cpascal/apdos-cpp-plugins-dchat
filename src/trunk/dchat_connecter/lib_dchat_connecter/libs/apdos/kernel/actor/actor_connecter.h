@@ -39,6 +39,8 @@ namespace apdos {
         bool has_fragment_message(std::vector<std::string>& messages);
         std::vector<std::string> get_address_tokens(std::string address);
 
+        void process_event(std::string message);
+
       private:
 	      boost::asio::io_service io_service;
         boost::asio::ip::tcp::socket socket;

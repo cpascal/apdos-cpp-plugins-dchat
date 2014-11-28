@@ -7,12 +7,13 @@ const char* Line_Input_Event::LINE_INPUT_STRING = "line_input_string";
 
 Line_Input_Event::Line_Input_Event(std::string input_string): 
 Event("Lint_Input_Event", LINE_INPUT_STRING) {
-  std::map<const char*, boost::any> data;
-  data["line_input_string"] = boost::any(input_string);
+  boost::shared_ptr<std::map<const char*, boost::any>> data(new std::map<const char*, boost::any>());
+  data->insert(std::make_pair("line_input_string", boost::any(input_string)));
   this->set_data(data);
 }
 
 std::string Line_Input_Event::get_line_input_string() {
-  std::map<const char*, boost::any> data = this->get_data();
-  return boost::any_cast<std::string>(data["line_input_string"]);
+  boost::shared_ptr<std::map<const char*, boost::any>> data = this->get_data();
+  std::map<const char*, boost::any> d = *data.get();
+  return boost::any_cast<std::string>(d["line_input_string"]);
 }
