@@ -20,10 +20,10 @@ Cmd_Presenter::~Cmd_Presenter() {
 void Cmd_Presenter::set_components(boost::shared_ptr<Line_Input> line_input, boost::shared_ptr<Client_Presenter> client_presenter) {
   this->line_input = line_input;
   this->client_presenter = client_presenter;
+  line_input->add_event_listener(Line_Input_Event::LINE_INPUT_STRING, boost::bind(&Cmd_Presenter::process_cmd, this, _1));
 }
 
-void Cmd_Presenter::start() {
-  line_input->add_event_listener(Line_Input_Event::LINE_INPUT_STRING, boost::bind(&Cmd_Presenter::process_cmd, this, _1));
+void Cmd_Presenter::poll() {
   line_input->poll();
 }
 

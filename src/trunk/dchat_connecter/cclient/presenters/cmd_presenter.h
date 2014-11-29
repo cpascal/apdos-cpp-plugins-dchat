@@ -21,7 +21,7 @@ namespace apdos {
             void set_components(boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::models::Line_Input> line_input, 
               boost::shared_ptr<apdos::plugins::dchat_connecter::presenters::Client_Presenter> client_presenter);
 
-            void start();
+            void poll();
 
           private:
             void process_cmd(apdos::kernel::event::Event& event);

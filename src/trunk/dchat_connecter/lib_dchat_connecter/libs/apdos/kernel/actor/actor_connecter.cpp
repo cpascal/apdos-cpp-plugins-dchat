@@ -5,9 +5,12 @@
 #include <boost/bind.hpp>
 #include <boost/lexical_cast.hpp>
 #include <libs/apdos/kernel/actor/events/proxy_event.h>
+#include <libs/apdos/kernel/kernel.h>
+#include <libs/apdos/kernel/actor/actor.h>
 
 typedef boost::tokenizer<boost::char_separator<char>> tokenizer;
 
+using namespace apdos::kernel;
 using namespace apdos::kernel::actor;
 using namespace apdos::kernel::actor::events;
 using namespace apdos::kernel::event;
@@ -97,9 +100,21 @@ void Actor_Connecter::handle_read(const boost::system::error_code& error, size_t
 }
 
 void Actor_Connecter::process_event(std::string message) {
-  return;
   boost::shared_ptr<Proxy_Event> proxy_event = boost::shared_ptr<Proxy_Event>(new Proxy_Event());
   proxy_event->deserialize(message);
+
+  std::string receiver_path = proxy_event->get_receiver_path();
+
+  if (0 == receiver_path.length()) {
+  }
+  else {
+    boost::shared_ptr<Actor> receive_actor = Actor::lookup(receiver_path);
+    if (receive_actor->is_null()) {
+      std::cout << "Actor_Connecter::process_event::receiver actor is null. path is " << receiver_path << std::endl;
+    }
+    Event e(proxy_event->get_target_type(), proxy_event->get_target_name(), proxy_event->get_target_data());
+    receive_actor->dispatch_event(e);
+  }
 }
 
 std::vector<std::string> Actor_Connecter::get_messages() {
