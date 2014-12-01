@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <boost/shared_ptr.hpp>
+#include <libs/apdos/plugins/uuid/object_id.h>
 
 namespace apdos {
   namespace plugins {
@@ -10,6 +11,20 @@ namespace apdos {
       namespace models {
         class User {
         public:
+          User(apdos::plugins::uuid::Object_Id id, std::string name);
+
+          apdos::plugins::uuid::Object_Id get_id();
+          std::string get_name();
+
+          void join_room(apdos::plugins::uuid::Object_Id room_id);
+          void leave_room();
+
+          apdos::plugins::uuid::Object_Id get_room_id();
+
+        private:
+          apdos::plugins::uuid::Object_Id id;
+          std::string name;
+          apdos::plugins::uuid::Object_Id room_id;
         };
       }
     }

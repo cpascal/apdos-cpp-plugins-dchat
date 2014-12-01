@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <libs/apdos/kernel/event/event.h>
+#include <vector>
+#include <map>
 
 namespace apdos {
   namespace plugins {
@@ -13,6 +15,10 @@ namespace apdos {
 
       public:
         Res_Login(std::string user_name);
+
+        std::string get_user_id();
+        std::string get_user_name();
+        boost::shared_ptr<std::vector<boost::any>> get_rooms();
       };
     }
   }

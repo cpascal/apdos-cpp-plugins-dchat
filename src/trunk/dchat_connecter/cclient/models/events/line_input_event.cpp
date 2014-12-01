@@ -14,6 +14,6 @@ Event("Lint_Input_Event", LINE_INPUT_STRING) {
 
 std::string Line_Input_Event::get_line_input_string() {
   boost::shared_ptr<std::map<std::string, boost::any>> data = this->get_data();
-  std::map<std::string, boost::any> d = *data.get();
+  std::map<std::string, boost::any>& d = *data.get();
   return boost::any_cast<std::string>(d["line_input_string"]);
 }

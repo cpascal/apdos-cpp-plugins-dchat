@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 #include <boost/any.hpp>
 #include <boost/shared_ptr.hpp>
 #include <libs/apdos/libs/json/json.h>
@@ -33,8 +34,11 @@ namespace apdos {
         virtual void deserialize(std::string& json_data);
       
       protected:
-        void serialize_data(Json::Value& value, std::map<std::string, boost::any>& properties);
-        void deserialize_data(std::map<std::string, boost::any> &store_map, std::string& key, Json::Value& value);
+        void serialize_object(Json::Value& store_value, std::map<std::string, boost::any>& properties);
+        void serialize_array(Json::Value& store_value, std::vector<boost::any>& values);
+
+        void deserialize_object(std::map<std::string, boost::any> &store_map, std::string& key, Json::Value& value);
+        void deserialize_array(std::vector<boost::any> &store_vector, Json::Value& value);
       };
     }
   }

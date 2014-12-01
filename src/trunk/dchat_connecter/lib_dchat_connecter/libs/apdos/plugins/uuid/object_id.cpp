@@ -2,6 +2,10 @@
 
 using namespace apdos::plugins::uuid;
 
+Object_Id::Object_Id() {
+  this->id = "";
+}
+
 Object_Id::Object_Id(std::string id) {
   this->id = id;
 }

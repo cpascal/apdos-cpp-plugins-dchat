@@ -65,8 +65,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="events\notify_add_room.h" />
+    <ClInclude Include="events\notify_leave_room.h" />
+    <ClInclude Include="events\notify_user_chat.h" />
+    <ClInclude Include="events\req_add_room.h" />
+    <ClInclude Include="events\req_join_room.h" />
+    <ClInclude Include="events\req_leave_room.h" />
     <ClInclude Include="events\req_login.h" />
+    <ClInclude Include="events\req_logout.h" />
+    <ClInclude Include="events\req_user_chat.h" />
+    <ClInclude Include="events\res_add_room.h" />
+    <ClInclude Include="events\res_join_room.h" />
+    <ClInclude Include="events\res_leave_room.h" />
     <ClInclude Include="events\res_login.h" />
+    <ClInclude Include="events\res_logout.h" />
+    <ClInclude Include="events\res_user_chat.h" />
     <ClInclude Include="libs\apdos\kernel\actor\actor.h" />
     <ClInclude Include="libs\apdos\kernel\actor\actor_connecter.h" />
     <ClInclude Include="libs\apdos\kernel\actor\component.h" />
@@ -88,15 +101,31 @@
     <ClInclude Include="libs\apdos\libs\json\reader.h" />
     <ClInclude Include="libs\apdos\libs\json\value.h" />
     <ClInclude Include="libs\apdos\libs\json\writer.h" />
+    <ClInclude Include="libs\apdos\plugins\uuid\null_object_id.h" />
     <ClInclude Include="libs\apdos\plugins\uuid\object_id.h" />
     <ClInclude Include="models\auth.h" />
+    <ClInclude Include="models\room.h" />
+    <ClInclude Include="models\rooms.h" />
     <ClInclude Include="models\user.h" />
     <ClInclude Include="presenters\client_listener_presenter.h" />
     <ClInclude Include="presenters\client_presenter.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="events\notify_add_room.cpp" />
+    <ClCompile Include="events\notify_leave_room.cpp" />
+    <ClCompile Include="events\notify_user_chat.cpp" />
+    <ClCompile Include="events\req_add_room.cpp" />
+    <ClCompile Include="events\req_join_room.cpp" />
+    <ClCompile Include="events\req_leave_room.cpp" />
     <ClCompile Include="events\req_login.cpp" />
+    <ClCompile Include="events\req_logout.cpp" />
+    <ClCompile Include="events\req_user_chat.cpp" />
+    <ClCompile Include="events\res_add_room.cpp" />
+    <ClCompile Include="events\res_join_room.cpp" />
+    <ClCompile Include="events\res_leave_room.cpp" />
     <ClCompile Include="events\res_login.cpp" />
+    <ClCompile Include="events\res_logout.cpp" />
+    <ClCompile Include="events\res_user_chat.cpp" />
     <ClCompile Include="libs\apdos\kernel\actor\actor.cpp" />
     <ClCompile Include="libs\apdos\kernel\actor\actor_connecter.cpp" />
     <ClCompile Include="libs\apdos\kernel\actor\component.cpp" />
@@ -114,6 +143,8 @@
     <ClCompile Include="libs\apdos\libs\json\json_writer.cpp" />
     <ClCompile Include="libs\apdos\plugins\uuid\object_id.cpp" />
     <ClCompile Include="models\auth.cpp" />
+    <ClCompile Include="models\room.cpp" />
+    <ClCompile Include="models\rooms.cpp" />
     <ClCompile Include="models\user.cpp" />
     <ClCompile Include="presenters\client_listener_presenter.cpp" />
     <ClCompile Include="presenters\client_presenter.cpp" />

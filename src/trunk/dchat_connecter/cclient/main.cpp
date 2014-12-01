@@ -10,6 +10,7 @@
 #include <presenters/client_presenter.h>
 #include <presenters/client_listener_presenter.h>
 #include <models/auth.h>
+#include <models/rooms.h>
 #include "models/line_input.h"
 #include "presenters/cmd_presenter.h"
 #include "models/events/line_input_event.h"
@@ -41,11 +42,14 @@ int main() {
   boost::shared_ptr<Root_Actor> auth_actor = Kernel::get_instance()->new_object<Root_Actor>("/sys/models/auth");
   boost::shared_ptr<Auth> auth = auth_actor->add_component<Auth>();
 
+  boost::shared_ptr<Root_Actor> rooms_actor = Kernel::get_instance()->new_object<Root_Actor>("/sys/models/rooms");
+  boost::shared_ptr<Rooms> rooms = rooms_actor->add_component<Rooms>();
+
   boost::shared_ptr<Root_Actor> client_presenter_actor = Kernel::get_instance()->new_object<Root_Actor>("/sys/presenters/client_presenter");
   boost::shared_ptr<Client_Presenter> client_presenter = client_presenter_actor->add_component<Client_Presenter>();
   client_presenter->set_component(actor_connecter);
   boost::shared_ptr<Client_Listener_Presenter> client_listener_presenter = client_presenter_actor->add_component<Client_Listener_Presenter>();
-  client_listener_presenter->set_component(auth);
+  client_listener_presenter->set_component(auth, rooms);
 
   boost::shared_ptr<Root_Actor> cmd_presenter_actor = Kernel::get_instance()->new_object<Root_Actor>("/sys/presenter/cmd_presenter");
   boost::shared_ptr<Cmd_Presenter> cmd_presenter = cmd_presenter_actor->add_component<Cmd_Presenter>();

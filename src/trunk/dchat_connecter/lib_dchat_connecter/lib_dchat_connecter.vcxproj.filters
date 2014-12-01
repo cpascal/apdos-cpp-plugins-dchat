@@ -132,6 +132,54 @@
     <ClInclude Include="libs\apdos\kernel\actor\root_actor.h">
       <Filter>libs\apdos\kernel\actor</Filter>
     </ClInclude>
+    <ClInclude Include="events\notify_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\notify_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\notify_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\req_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\req_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\req_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\req_logout.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\req_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\res_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\res_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\res_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\res_logout.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\res_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\apdos\plugins\uuid\null_object_id.h">
+      <Filter>libs\apdos\plugins\uuid</Filter>
+    </ClInclude>
+    <ClInclude Include="models\room.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\rooms.h">
+      <Filter>models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="events\res_login.cpp">
@@ -199,6 +247,51 @@
     </ClCompile>
     <ClCompile Include="libs\apdos\kernel\actor\root_actor.cpp">
       <Filter>libs\apdos\kernel\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="events\notify_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\notify_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\notify_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\req_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\req_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\req_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\req_logout.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\req_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\res_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\res_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\res_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\res_logout.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\res_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="models\room.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\rooms.cpp">
+      <Filter>models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
