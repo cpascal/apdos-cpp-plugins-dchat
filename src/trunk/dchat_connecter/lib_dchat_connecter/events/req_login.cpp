@@ -1,6 +1,5 @@
 #include "req_login.h"
 #include <boost/any.hpp>
-#include <events/test.h>
 
 using namespace apdos::plugins::dchat_connecter;
 using namespace apdos::kernel::event;

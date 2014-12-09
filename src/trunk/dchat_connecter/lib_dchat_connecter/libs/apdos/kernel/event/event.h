@@ -11,34 +11,39 @@
 namespace apdos {
   namespace kernel {
     namespace event {
+      typedef std::map<std::string, boost::any> Any_Map;
+      typedef boost::shared_ptr<Any_Map> Any_Map_Shared_Ptr;
+      typedef std::vector<boost::any> Any_Vector;
+      typedef boost::shared_ptr<Any_Vector> Any_Vector_Shared_Ptr;
+
       class Event {
       public:
         Event();
         Event(std::string type, std::string name);
-        Event(std::string type, std::string name, boost::shared_ptr<std::map<std::string, boost::any>> data);
+        Event(std::string type, std::string name, Any_Map_Shared_Ptr data);
 
         std::string get_type();
         std::string get_name() { return this->name; }
-        boost::shared_ptr<std::map<std::string, boost::any>> get_data() { return this->data; }
+        Any_Map_Shared_Ptr get_data() { return this->data; }
 
       protected:
-        void set_data(boost::shared_ptr<std::map<std::string, boost::any>> data);
+        void set_data(Any_Map_Shared_Ptr data);
 
       protected:
         std::string type;
         std::string name;
-        boost::shared_ptr<std::map<std::string, boost::any>> data;
+        Any_Map_Shared_Ptr data;
 
       public:
         virtual std::string serialize();
         virtual void deserialize(std::string& json_data);
       
       protected:
-        void serialize_object(Json::Value& store_value, std::map<std::string, boost::any>& properties);
-        void serialize_array(Json::Value& store_value, std::vector<boost::any>& values);
+        void serialize_object(Json::Value& store_value, Any_Map& properties);
+        void serialize_array(Json::Value& store_value, Any_Vector& values);
 
-        void deserialize_object(std::map<std::string, boost::any> &store_map, std::string& key, Json::Value& value);
-        void deserialize_array(std::vector<boost::any> &store_vector, Json::Value& value);
+        void deserialize_object(Any_Map &store_map, std::string& key, Json::Value& value);
+        void deserialize_array(Any_Vector &store_vector, Json::Value& value);
       };
     }
   }

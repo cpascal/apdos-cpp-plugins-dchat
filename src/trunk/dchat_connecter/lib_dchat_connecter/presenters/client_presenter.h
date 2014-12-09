@@ -11,9 +11,11 @@ namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace presenters {
+        typedef boost::shared_ptr<apdos::kernel::actor::Actor_Connecter> Actor_Connecter_Shared_Ptr;
+
         class Client_Presenter: public apdos::kernel::actor::Component {
         public:
-          void set_component(boost::shared_ptr<apdos::kernel::actor::Actor_Connecter> actor_connecter);
+          void set_component(Actor_Connecter_Shared_Ptr actor_connecter);
 
           void login(std::string user_name);
           void logout();
@@ -23,7 +25,7 @@ namespace apdos {
           void user_chat(std::string message);
 
         private:
-          boost::shared_ptr<apdos::kernel::actor::Actor_Connecter> actor_connecter;
+          Actor_Connecter_Shared_Ptr actor_connecter;
         };
       }
     }

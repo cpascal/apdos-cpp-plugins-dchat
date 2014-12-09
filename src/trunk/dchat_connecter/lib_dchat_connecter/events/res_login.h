@@ -14,11 +14,11 @@ namespace apdos {
         static const char* RES_LOGIN;
 
       public:
-        Res_Login(std::string user_name);
+        Res_Login();
 
         std::string get_user_id();
         std::string get_user_name();
-        boost::shared_ptr<std::vector<boost::any>> get_rooms();
+        apdos::kernel::event::Any_Vector_Shared_Ptr get_rooms();
       };
     }
   }

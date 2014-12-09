@@ -16,7 +16,7 @@ namespace apdos {
         Actor(std::string path);
         virtual ~Actor();
 
-        virtual bool is_null() = 0;
+        virtual bool is_null() { return false; }
 
         template <class T>
         boost::shared_ptr<T> add_component() {

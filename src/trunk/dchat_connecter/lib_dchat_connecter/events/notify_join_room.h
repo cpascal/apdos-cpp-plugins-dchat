@@ -1,5 +1,5 @@
-#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_RES_JOIN_ROOM_H
-#define APDOS_PLUGINS_DCHAT_CONNECTER_RES_JOIN_ROOM_H
+#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_NOTIFY_JOIN_ROOM_H
+#define APDOS_PLUGINS_DCHAT_CONNECTER_NOTIFY_JOIN_ROOM_H
 
 #include <iostream>
 #include <libs/apdos/kernel/event/event.h>
@@ -9,12 +9,12 @@
 namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
-      class Res_Join_Room: public apdos::kernel::event::Event {
+      class Notify_Join_Room: public apdos::kernel::event::Event {
       public:
-        static const char* RES_JOIN_ROOM;
+        static const char* NOTIFY_JOIN_ROOM;
 
       public:
-        Res_Join_Room();
+        Notify_Join_Room();
 
         std::string get_user_id();
         std::string get_user_name();
@@ -26,4 +26,4 @@ namespace apdos {
   }
 }
 
-#endif //APDOS_PLUGINS_DCHAT_CONNECTER_RES_JOIN_ROOM_H
+#endif //APDOS_PLUGINS_DCHAT_CONNECTER_NOTIFY_JOIN_ROOM_H

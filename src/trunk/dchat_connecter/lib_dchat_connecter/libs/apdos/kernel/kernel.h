@@ -8,6 +8,9 @@
 
 namespace apdos {
   namespace kernel {
+    typedef boost::shared_ptr<apdos::kernel::Node> Node_Shared_Ptr;
+    typedef boost::shared_ptr<apdos::kernel::Null_Node> Null_Node_Shared_Ptr;
+
     class Kernel {
     public:
       Kernel();
@@ -24,25 +27,25 @@ namespace apdos {
       template <class T>
       boost::shared_ptr<T> lookup(std::string path) {
         //boost::shared_ptr<T> result = dynamic_cast<boost::shared_ptr<T>>(this->nodes[path]);
-        std::map<std::string, boost::shared_ptr<apdos::kernel::Node>>::iterator element = this->nodes.find(path);
+        std::map<std::string, Node_Shared_Ptr>::iterator element = this->nodes.find(path);
         if (element == nodes.end()) {
-          boost::shared_ptr<apdos::kernel::Null_Node> null_node = boost::shared_ptr<apdos::kernel::Null_Node>(new apdos::kernel::Null_Node());
+          Null_Node_Shared_Ptr null_node = Null_Node_Shared_Ptr(new apdos::kernel::Null_Node());
           return boost::static_pointer_cast<T>(null_node);
         }
         return boost::static_pointer_cast<T>(element->second);
       }
       */
 
-      boost::shared_ptr<apdos::kernel::Node> lookup(std::string path) {
-        std::map<std::string, boost::shared_ptr<apdos::kernel::Node>>::iterator element = this->nodes.find(path);
+      Node_Shared_Ptr lookup(std::string path) {
+        std::map<std::string, Node_Shared_Ptr>::iterator element = this->nodes.find(path);
         if (element == nodes.end()) {
-          return boost::shared_ptr<apdos::kernel::Null_Node>(new apdos::kernel::Null_Node());
+          return Null_Node_Shared_Ptr(new apdos::kernel::Null_Node());
         }
         return element->second;
       }
 
     private:
-      std::map<std::string, boost::shared_ptr<apdos::kernel::Node>> nodes;
+      std::map<std::string, Node_Shared_Ptr> nodes;
 
     public:
       static boost::shared_ptr<Kernel> get_instance();

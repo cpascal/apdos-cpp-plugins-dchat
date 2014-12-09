@@ -5,23 +5,23 @@
 using namespace apdos::kernel::event;
 
 Event::Event() {
-  this->data = boost::shared_ptr<std::map<std::string, boost::any>>(new std::map<std::string, boost::any>());
+  this->data = Any_Map_Shared_Ptr(new Any_Map());
 }
 
 Event::Event(std::string type, std::string name) {
   this->type = type;
   this->name = name;
-  this->data = boost::shared_ptr<std::map<std::string, boost::any>>(new std::map<std::string, boost::any>());
+  this->data = Any_Map_Shared_Ptr(new Any_Map());
 }
 
 
-Event::Event(std::string type, std::string name, boost::shared_ptr<std::map<std::string, boost::any>> data) {
+Event::Event(std::string type, std::string name, Any_Map_Shared_Ptr data) {
   this->type = type;
   this->name = name;
   this->data = data;
 }
 
-void Event::set_data(boost::shared_ptr<std::map<std::string, boost::any>> data) {
+void Event::set_data(Any_Map_Shared_Ptr data) {
   this->data = data;
 }
 
@@ -35,27 +35,27 @@ std::string Event::serialize() {
   json_map["name"] = this->get_name();
   json_map["data"] = Json::Value();
 
-  boost::shared_ptr<std::map<std::string, boost::any>> data = this->get_data();
+  Any_Map_Shared_Ptr data = this->get_data();
   serialize_object(json_map["data"], *data.get());
 
   Json::FastWriter writer;
   return writer.write(json_map);
 }
 
-void Event::serialize_object(Json::Value& value, std::map<std::string, boost::any>& properties) {
-  std::map<std::string, boost::any>::iterator it = properties.begin(), end = properties.end();
+void Event::serialize_object(Json::Value& value, Any_Map& properties) {
+  Any_Map::iterator it = properties.begin(), end = properties.end();
   for (; it != end; ++it) {
     boost::any p = it->second;
     if (p.type() == typeid(std::string)) {
       value[it->first] = boost::any_cast<std::string>(p);
     }
-    if (p.type() == typeid(boost::shared_ptr<std::vector<boost::any>>)) {
-      boost::shared_ptr<std::vector<boost::any>> v = boost::any_cast<boost::shared_ptr<std::vector<boost::any>>>(p);
+    if (p.type() == typeid(Any_Vector_Shared_Ptr)) {
+      Any_Vector_Shared_Ptr v = boost::any_cast<Any_Vector_Shared_Ptr>(p);
       value[it->first] = Json::Value();
       serialize_array(value[it->first], *v.get());
     }
-    if (p.type() == typeid(boost::shared_ptr<std::map<std::string, boost::any>>)) {
-      boost::shared_ptr<std::map<std::string, boost::any>> m = boost::any_cast<boost::shared_ptr<std::map<std::string, boost::any>>>(p);
+    if (p.type() == typeid(Any_Map_Shared_Ptr)) {
+      Any_Map_Shared_Ptr m = boost::any_cast<Any_Map_Shared_Ptr>(p);
       value[it->first] = Json::Value();
       serialize_object(value[it->first], *m.get());
     }
@@ -63,19 +63,19 @@ void Event::serialize_object(Json::Value& value, std::map<std::string, boost::an
 }
 
 
-void Event::serialize_array(Json::Value& store_value, std::vector<boost::any>& values) {
+void Event::serialize_array(Json::Value& store_value, Any_Vector& values) {
   for (int i = 0; i < values.size(); ++i) {
     boost::any p = values[i];
     if (p.type() == typeid(std::string)) {
       store_value.append(boost::any_cast<std::string>(p));
     }
-    if (p.type() == typeid(boost::shared_ptr<std::vector<boost::any>>)) {
-      boost::shared_ptr<std::vector<boost::any>> v = boost::any_cast<boost::shared_ptr<std::vector<boost::any>>>(p);
+    if (p.type() == typeid(Any_Vector_Shared_Ptr)) {
+      Any_Vector_Shared_Ptr v = boost::any_cast<Any_Vector_Shared_Ptr>(p);
       store_value.append(Json::Value());
       serialize_array(store_value[store_value.size() - 1], *v.get());
     }
-    if (p.type() == typeid(boost::shared_ptr<std::map<std::string, boost::any>>)) {
-      boost::shared_ptr<std::map<std::string, boost::any>> m = boost::any_cast<boost::shared_ptr<std::map<std::string, boost::any>>>(p);
+    if (p.type() == typeid(Any_Map_Shared_Ptr)) {
+      Any_Map_Shared_Ptr m = boost::any_cast<Any_Map_Shared_Ptr>(p);
       store_value.append(Json::Value());
       serialize_object(store_value[store_value.size() - 1], *m.get());
     }
@@ -98,12 +98,12 @@ void Event::deserialize(std::string& json_data) {
   std::cout << serialize() << std::endl;
 }
 
-void Event::deserialize_object(std::map<std::string, boost::any>& store_map, std::string& key, Json::Value& value) {
+void Event::deserialize_object(Any_Map& store_map, std::string& key, Json::Value& value) {
   Json::Value& read_value = value[key];
   switch (read_value.type()) {
   case Json::objectValue: 
     {
-      boost::shared_ptr<std::map<std::string, boost::any>> map(new std::map<std::string, boost::any>());
+      Any_Map_Shared_Ptr map(new Any_Map());
       store_map[key] = boost::any(map);
 
       Json::Value::Members members(read_value.getMemberNames());
@@ -115,7 +115,7 @@ void Event::deserialize_object(std::map<std::string, boost::any>& store_map, std
     break;
   case Json::arrayValue:
     {
-      boost::shared_ptr<std::vector<boost::any>> values(new std::vector<boost::any>());
+      Any_Vector_Shared_Ptr values(new Any_Vector());
       store_map[key] = boost::any(values);
 
       for (int i = 0; i < read_value.size(); ++i) {
@@ -134,11 +134,11 @@ void Event::deserialize_object(std::map<std::string, boost::any>& store_map, std
   }
 }
 
-void Event::deserialize_array(std::vector<boost::any> &store_vector, Json::Value& value) {
+void Event::deserialize_array(Any_Vector &store_vector, Json::Value& value) {
   switch (value.type()) {
   case Json::objectValue:
     {
-      boost::shared_ptr<std::map<std::string, boost::any>> map(new std::map<std::string, boost::any>());
+      Any_Map_Shared_Ptr map(new Any_Map());
       store_vector.push_back(boost::any(map));
 
       Json::Value::Members members(value.getMemberNames());
@@ -150,7 +150,7 @@ void Event::deserialize_array(std::vector<boost::any> &store_vector, Json::Value
     break;
   case Json::arrayValue:
     {
-      boost::shared_ptr<std::vector<boost::any>> values(new std::vector<boost::any>());
+      Any_Vector_Shared_Ptr values(new Any_Vector());
       store_vector.push_back(boost::any(values));
 
       for (int i = 0; i < value.size(); ++i) {

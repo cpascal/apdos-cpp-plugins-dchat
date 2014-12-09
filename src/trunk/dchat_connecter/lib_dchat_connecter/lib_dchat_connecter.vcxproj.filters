@@ -129,9 +129,6 @@
     <ClInclude Include="libs\apdos\kernel\actor\null_actor.h">
       <Filter>libs\apdos\kernel\actor</Filter>
     </ClInclude>
-    <ClInclude Include="libs\apdos\kernel\actor\root_actor.h">
-      <Filter>libs\apdos\kernel\actor</Filter>
-    </ClInclude>
     <ClInclude Include="events\notify_add_room.h">
       <Filter>events</Filter>
     </ClInclude>
@@ -178,6 +175,18 @@
       <Filter>models</Filter>
     </ClInclude>
     <ClInclude Include="models\rooms.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\null_user.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="events\notify_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="models\room_users.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\room_user.h">
       <Filter>models</Filter>
     </ClInclude>
   </ItemGroup>
@@ -245,9 +254,6 @@
     <ClCompile Include="libs\apdos\kernel\actor\null_actor.cpp">
       <Filter>libs\apdos\kernel\actor</Filter>
     </ClCompile>
-    <ClCompile Include="libs\apdos\kernel\actor\root_actor.cpp">
-      <Filter>libs\apdos\kernel\actor</Filter>
-    </ClCompile>
     <ClCompile Include="events\notify_add_room.cpp">
       <Filter>events</Filter>
     </ClCompile>
@@ -291,6 +297,18 @@
       <Filter>models</Filter>
     </ClCompile>
     <ClCompile Include="models\rooms.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\null_user.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="events\notify_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="models\room_user.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="models\room_users.cpp">
       <Filter>models</Filter>
     </ClCompile>
   </ItemGroup>

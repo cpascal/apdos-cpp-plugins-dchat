@@ -1,5 +1,5 @@
-#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_USER_H
-#define APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_USER_H
+#ifndef APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_ROOM_USER_H
+#define APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_ROOM_USER_H
 
 #include <iostream>
 #include <boost/shared_ptr.hpp>
@@ -9,24 +9,18 @@ namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace models {
-        class User {
+        class Room_User {
         public:
-          User(apdos::plugins::uuid::Object_Id id, std::string name);
+          Room_User(apdos::plugins::uuid::Object_Id id, std::string name);
 
           virtual bool is_null() { return false; }
 
           apdos::plugins::uuid::Object_Id get_id();
           std::string get_name();
 
-          void join_room(apdos::plugins::uuid::Object_Id room_id);
-          void leave_room();
-
-          apdos::plugins::uuid::Object_Id get_room_id();
-
         private:
           apdos::plugins::uuid::Object_Id id;
           std::string name;
-          apdos::plugins::uuid::Object_Id room_id;
         };
       }
     }
@@ -34,4 +28,4 @@ namespace apdos {
 }
 
 
-#endif //APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_USER_H
+#endif //APDOS_PLUGINS_DCHAT_CONNECTER_MODELS_ROOM_USER_H

@@ -17,10 +17,12 @@ Cmd_Presenter::Cmd_Presenter() {
 Cmd_Presenter::~Cmd_Presenter() {
 }
 
-void Cmd_Presenter::set_components(boost::shared_ptr<Line_Input> line_input, boost::shared_ptr<Client_Presenter> client_presenter) {
+void Cmd_Presenter::set_components(boost::shared_ptr<Line_Input> line_input, 
+  boost::shared_ptr<Client_Presenter> client_presenter) {
   this->line_input = line_input;
   this->client_presenter = client_presenter;
-  line_input->add_event_listener(Line_Input_Event::LINE_INPUT_STRING, boost::bind(&Cmd_Presenter::process_cmd, this, _1));
+  line_input->add_event_listener(Line_Input_Event::LINE_INPUT_STRING, 
+    boost::bind(&Cmd_Presenter::process_cmd, this, _1));
 }
 
 void Cmd_Presenter::poll() {
@@ -38,5 +40,12 @@ void Cmd_Presenter::process_cmd(Event& event) {
   if (0 == line_input_string.compare("login")) {
     std::string user_name = "test";
     client_presenter->login(user_name);
+  }
+  if (0 == line_input_string.compare("add_room")) {
+    std::string room_name = "test_room";
+    client_presenter->add_room(room_name);
+  }
+  if (0 == line_input_string.compare("logout")) {
+    client_presenter->logout();
   }
 }
