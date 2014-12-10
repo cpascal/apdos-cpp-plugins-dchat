@@ -13,6 +13,9 @@ namespace apdos {
       namespace models {
         class Auth: public apdos::kernel::actor::Component {
         public:
+          Auth();
+          virtual ~Auth();
+
           void login(boost::shared_ptr<User> user) {
             this->user = user;
           }

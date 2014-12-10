@@ -6,6 +6,9 @@
 #include <libs/apdos/kernel/event/event.h>
 #include "../models/line_input.h"
 #include <presenters/client_presenter.h>
+#include <models/auth.h>
+#include "wait_room_cmd_presenter.h"
+#include "chat_room_cmd_presenter.h"
 
 namespace apdos {
   namespace plugins {
@@ -13,13 +16,23 @@ namespace apdos {
       namespace cclient {
         namespace presenters {
           class Cmd_Presenter: public apdos::kernel::actor::Component {
+          typedef boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::models::Line_Input> Line_Input_Shared_Ptr;
+          typedef boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::presenters::Wait_Room_Cmd_Presenter>
+            Wait_Room_Cmd_Presenter_Shared_Ptr;
+          typedef boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::presenters::Chat_Room_Cmd_Presenter>
+            Chat_Room_Cmd_Presenter_Shared_Ptr;
+          typedef boost::shared_ptr<apdos::plugins::dchat_connecter::models::Auth> Auth_Shared_Ptr;
+
           public:
             Cmd_Presenter();
             virtual ~Cmd_Presenter();
 
             // @TODO 나중에 start이벤트 시작하면서 다른 컴포넌트 세팅하도록 변경. apdos-nodejs참고
-            void set_components(boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::models::Line_Input> line_input, 
-              boost::shared_ptr<apdos::plugins::dchat_connecter::presenters::Client_Presenter> client_presenter);
+            void set_components(
+              Auth_Shared_Ptr auth,
+              Line_Input_Shared_Ptr line_input, 
+              Wait_Room_Cmd_Presenter_Shared_Ptr wait_room_cmd_presenter,
+              Chat_Room_Cmd_Presenter_Shared_Ptr chat_room_cmd_presenter);
 
             void poll();
 
@@ -27,8 +40,10 @@ namespace apdos {
             void process_cmd(apdos::kernel::event::Event& event);
 
           private:
-            boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::models::Line_Input> line_input;
-            boost::shared_ptr<apdos::plugins::dchat_connecter::presenters::Client_Presenter> client_presenter;
+            Auth_Shared_Ptr auth;
+            Line_Input_Shared_Ptr line_input;
+            Wait_Room_Cmd_Presenter_Shared_Ptr wait_room_cmd_presenter;
+            Chat_Room_Cmd_Presenter_Shared_Ptr chat_room_cmd_presenter;
           };
         }
       }

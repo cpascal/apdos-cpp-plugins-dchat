@@ -3,6 +3,8 @@
 #include <events/req_logout.h>
 #include <events/req_add_room.h>
 #include <events/req_join_room.h>
+#include <events/req_leave_room.h>
+#include <events/req_user_chat.h>
 
 using namespace apdos::kernel::actor;
 using namespace apdos::plugins::dchat_connecter::presenters;
@@ -32,7 +34,11 @@ void Client_Presenter::join_room(apdos::plugins::uuid::Object_Id room_id) {
 }
 
 void Client_Presenter::leave_room() {
+  Req_Leave_Room req_leave_room;
+  actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_leave_room);
 }
 
 void Client_Presenter::user_chat(std::string message) {
+  Req_User_Chat req_user_chat(message);
+  actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_user_chat);
 }

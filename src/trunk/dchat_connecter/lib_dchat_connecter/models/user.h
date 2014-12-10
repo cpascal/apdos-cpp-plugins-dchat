@@ -9,24 +9,26 @@ namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace models {
+        typedef boost::shared_ptr<apdos::plugins::uuid::Object_Id> Object_Id_Shared_Ptr;
+
         class User {
         public:
-          User(apdos::plugins::uuid::Object_Id id, std::string name);
+          User(Object_Id_Shared_Ptr id, std::string name);
 
           virtual bool is_null() { return false; }
 
-          apdos::plugins::uuid::Object_Id get_id();
+          Object_Id_Shared_Ptr get_id();
           std::string get_name();
 
-          void join_room(apdos::plugins::uuid::Object_Id room_id);
+          void join_room(Object_Id_Shared_Ptr room_id);
           void leave_room();
 
-          apdos::plugins::uuid::Object_Id get_room_id();
+          Object_Id_Shared_Ptr get_room_id();
 
         private:
-          apdos::plugins::uuid::Object_Id id;
+          Object_Id_Shared_Ptr id;
           std::string name;
-          apdos::plugins::uuid::Object_Id room_id;
+          Object_Id_Shared_Ptr room_id;
         };
       }
     }

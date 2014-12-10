@@ -33,6 +33,12 @@
     <ClCompile Include="presenters\cmd_presenter.cpp">
       <Filter>presenters</Filter>
     </ClCompile>
+    <ClCompile Include="presenters\chat_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="presenters\wait_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\lib-dchat-connecter\lib-dchat-connecter.vcxproj" />
@@ -45,6 +51,12 @@
       <Filter>models\events</Filter>
     </ClInclude>
     <ClInclude Include="presenters\cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\chat_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="presenters\wait_room_cmd_presenter.h">
       <Filter>presenters</Filter>
     </ClInclude>
   </ItemGroup>
