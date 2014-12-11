@@ -8,7 +8,7 @@
 #include <libs/apdos/kernel/kernel.h>
 #include <libs/apdos/kernel/actor/actor.h>
 
-typedef boost::tokenizer<boost::char_separator<char>> tokenizer;
+typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 
 using namespace apdos::kernel;
 using namespace apdos::kernel::actor;

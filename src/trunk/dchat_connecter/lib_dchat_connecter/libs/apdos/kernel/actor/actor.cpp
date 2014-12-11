@@ -13,7 +13,7 @@ Actor::~Actor() {
 
 void Actor::dispatch_event(apdos::kernel::event::Event& event) {
   Event_Dispatcher::dispatch_event(event);
-  std::vector<boost::shared_ptr<Component>>::iterator iter;
+  std::vector<boost::shared_ptr<Component> >::iterator iter;
   for (iter = components.begin(); iter != components.end(); ++iter) {
     (*iter)->dispatch_event(event);
   }

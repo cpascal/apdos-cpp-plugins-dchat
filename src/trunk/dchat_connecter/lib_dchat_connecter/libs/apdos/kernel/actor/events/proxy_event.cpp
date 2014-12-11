@@ -13,11 +13,11 @@ Event("Proxy_Event", PROXY_EVENT) {
   this->set_data(this->create_event_data(sender_path, receiver_path, remote_event));
 }
 
-boost::shared_ptr<std::map<std::string, boost::any>> Proxy_Event::create_event_data(
+boost::shared_ptr<std::map<std::string, boost::any> > Proxy_Event::create_event_data(
   std::string sender_path, 
   std::string receiver_path, 
   apdos::kernel::event::Event remote_event) {
-    boost::shared_ptr<std::map<std::string, boost::any>> result(new std::map<std::string, boost::any>);
+    boost::shared_ptr<std::map<std::string, boost::any> > result(new std::map<std::string, boost::any>);
     std::map<std::string, boost::any>& map = *result.get();
     map[std::string("target_type")] = boost::any(remote_event.get_type());
     map[std::string("target_name")] = boost::any(remote_event.get_name());
@@ -48,7 +48,7 @@ std::string Proxy_Event::get_target_name() {
   return boost::any_cast<std::string>(map["target_name"]);
 }
 
-boost::shared_ptr<std::map<std::string, boost::any>> Proxy_Event::get_target_data() {
+boost::shared_ptr<std::map<std::string, boost::any> > Proxy_Event::get_target_data() {
   std::map<std::string, boost::any>& map = *this->data.get();
-  return boost::any_cast<boost::shared_ptr<std::map<std::string, boost::any>>>(map["target_data"]);
+  return boost::any_cast<boost::shared_ptr<std::map<std::string, boost::any> > >(map["target_data"]);
 }

@@ -47,10 +47,12 @@ void Client_Listener_Presenter::on_res_login(apdos::kernel::event::Event& event)
   boost::shared_ptr<User> user(new User(user_id, e->get_user_name()));
   auth->login(user);
 
-  std::vector<boost::any>& rooms_data = *e->get_rooms().get();
+  // NDK에서는 const로 선언하지 않으면 컴파일 에러 발생
+  const std::vector<boost::any>& rooms_data = *e->get_rooms().get();
   this->rooms->clear();
   for (int i = 0; i < rooms_data.size(); ++i) {
-    Any_Map_Shared_Ptr& room = boost::any_cast<Any_Map_Shared_Ptr>(rooms_data[i]);
+    // NDK에서는 const로 선언하지 않으면 컴파일 에러 발생
+    const Any_Map_Shared_Ptr& room = boost::any_cast<Any_Map_Shared_Ptr >(rooms_data[i]);
     std::map<std::string, boost::any>& map = *room.get();
     this->rooms->add_room(Object_Id(boost::any_cast<std::string>(map["id"])), boost::any_cast<std::string>(map["name"]));
   }

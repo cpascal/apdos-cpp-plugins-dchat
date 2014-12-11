@@ -18,13 +18,13 @@ namespace apdos {
           void clear();
           void add_room(apdos::plugins::uuid::Object_Id room_id, std::string room_name);
 
-          boost::shared_ptr<std::vector<boost::shared_ptr<Room>>> get_rooms();
+          boost::shared_ptr<std::vector<boost::shared_ptr<Room> > > get_rooms();
 
         private:
           int gen_room_num();
 
         private:
-          boost::shared_ptr<std::vector<boost::shared_ptr<Room>>> rooms;
+          boost::shared_ptr<std::vector<boost::shared_ptr<Room> > > rooms;
           int increment_count;
         };
       }

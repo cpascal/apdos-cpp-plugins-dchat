@@ -3,11 +3,11 @@
 using namespace apdos::plugins::dchat_connecter::models;
 
 Rooms::Rooms(): increment_count(0) {
-  rooms = boost::shared_ptr<std::vector<boost::shared_ptr<Room>>>(new std::vector<boost::shared_ptr<Room>>());
+  rooms = boost::shared_ptr<std::vector<boost::shared_ptr<Room> > >(new std::vector<boost::shared_ptr<Room> >());
 }
 
 
-boost::shared_ptr<std::vector<boost::shared_ptr<Room>>> Rooms::get_rooms() {
+boost::shared_ptr<std::vector<boost::shared_ptr<Room> > > Rooms::get_rooms() {
   return this->rooms;
 }
 

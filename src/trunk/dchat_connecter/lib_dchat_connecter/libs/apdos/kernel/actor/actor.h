@@ -31,7 +31,7 @@ namespace apdos {
 
       private:
         std::string path;
-        std::vector<boost::shared_ptr<apdos::kernel::actor::Component>> components;
+        std::vector< boost::shared_ptr<apdos::kernel::actor::Component> > components;
 
       public:
         static boost::shared_ptr<Actor> lookup(std::string path);

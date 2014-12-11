@@ -11,7 +11,7 @@ namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace models {
-        typedef std::vector<boost::shared_ptr<Room_User>> Room_User_Vector;
+        typedef std::vector<boost::shared_ptr<Room_User> > Room_User_Vector;
         typedef boost::shared_ptr<Room_User_Vector> Room_User_Vector_Shared_Ptr;
 
         class Room_Users: public apdos::kernel::actor::Component {

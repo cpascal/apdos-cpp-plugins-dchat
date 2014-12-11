@@ -24,10 +24,10 @@ namespace apdos {
 
           std::string get_target_type();
           std::string get_target_name();
-          boost::shared_ptr<std::map<std::string, boost::any>> get_target_data();
+          boost::shared_ptr<std::map<std::string, boost::any> > get_target_data();
 
         private:
-          boost::shared_ptr<std::map<std::string, boost::any>> create_event_data(
+          boost::shared_ptr<std::map<std::string, boost::any> > create_event_data(
             std::string sender_path, 
             std::string receiver_path, 
             apdos::kernel::event::Event remote_event);
