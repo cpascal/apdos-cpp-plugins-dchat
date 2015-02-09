@@ -23,6 +23,13 @@ namespace apdos {
         return result;
       }
 
+      void delete_object(std::string path) {
+        std::map<std::string, Node_Shared_Ptr>::iterator element = this->nodes.find(path);
+        if (element != nodes.end()) {
+          nodes.erase(element);
+        }
+      }
+
       /* 
       template <class T>
       boost::shared_ptr<T> lookup(std::string path) {

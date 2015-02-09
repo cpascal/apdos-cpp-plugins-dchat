@@ -39,8 +39,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\workspace\sdk\android-ndk-r8b\sources\boost_1_53_0;C:\workspace\projects\apdos-cpp-plugins-dchat-connecter\src\trunk\dchat_connecter\lib_dchat_connecter;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\workspace\sdk\android-ndk-r8b\sources\boost_1_53_0\stage\lib;C:\workspace\projects\apdos-cpp-plugins-dchat-connecter\src\trunk\dchat_connecter\lib_dchat_connecter\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\sdk\android-ndk-r8b\sources\boost;D:\projects\apdos-cpp-plugins-dchat-connecter\src\trunk\dchat_connecter\lib_dchat_connecter;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\sdk\android-ndk-r8b\sources\boost\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

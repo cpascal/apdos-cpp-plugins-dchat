@@ -22,6 +22,10 @@ Actor_Connecter::Actor_Connecter() : Component(),
   read_index(0) {
 }
 
+Actor_Connecter::~Actor_Connecter() {
+  this->disconnect();
+}
+
 
 void Actor_Connecter::connect(std::string address) {
   std::vector<std::string> tokens = this->get_address_tokens(address);

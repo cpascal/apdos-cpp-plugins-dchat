@@ -17,6 +17,7 @@ namespace apdos {
         static const int READ_BUFFER_SIZE = 1024;
 
         Actor_Connecter();
+        virtual ~Actor_Connecter();
 
         /**
          * 다른 Actor에 접속

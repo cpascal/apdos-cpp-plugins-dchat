@@ -39,8 +39,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <IncludePath>$(ProjectDir);C:\workspace\sdk\android-ndk-r8b\sources\boost_1_53_0;C:\workspace\projects\apdos-cpp-plugins-dchat-connecter\src\trunk\dchat_connecter\lib_dchat_connecter\libs\apdos\libs;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\workspace\sdk\android-ndk-r8b\sources\boost_1_53_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir);D:\sdk\android-ndk-r8b\sources\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\sdk\android-ndk-r8b\sources\boost\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
