@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{85A24AB4-EB36-4D2A-B0FC-8FDBB4C715B8}</ProjectGuid>
+    <RootNamespace>libdchatconnecter</RootNamespace>
+    <ProjectName>dchat-connecter</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IncludePath>$(ProjectDir)\..\..;D:\projects\apdos-cpp\apdos\exts\boost_1_53_0;D:\projects\apdos-cpp\apdos;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_login.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_login.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_logout.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_user_chat.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\auth.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\null_user.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\rooms.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_user.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_users.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\user.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_login.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_login.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_logout.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_user_chat.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\auth.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\null_user.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\rooms.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_user.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_users.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\user.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

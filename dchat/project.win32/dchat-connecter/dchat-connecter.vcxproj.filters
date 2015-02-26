@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="events">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="models">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="presenters">
+      <UniqueIdentifier>{56b07399-dd52-4096-9536-1ea2a3e78ef0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_login.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_login.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_logout.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_user_chat.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\auth.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\null_user.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_user.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_users.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\rooms.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\user.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_login.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_login.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_logout.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_user_chat.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\auth.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\null_user.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_user.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_users.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\rooms.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\user.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

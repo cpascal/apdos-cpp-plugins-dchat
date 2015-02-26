@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="entry">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="models">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="models\events">
+      <UniqueIdentifier>{5b094609-26d5-497f-98d0-633ef452b0ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="presenters">
+      <UniqueIdentifier>{e8afef10-ea81-428b-ade9-0ca38df88ac0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\lib-dchat-connecter\lib-dchat-connecter.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\presenters\chat_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\presenters\cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\presenters\wait_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\models\events\line_input_event.cpp">
+      <Filter>models\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\models\line_input.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\cclient\main.cpp">
+      <Filter>entry</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\apdos\plugins\dchat\cclient\presenters\chat_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\cclient\presenters\cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\cclient\presenters\wait_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\cclient\models\events\line_input_event.h">
+      <Filter>models\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\cclient\models\line_input.h">
+      <Filter>models</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
