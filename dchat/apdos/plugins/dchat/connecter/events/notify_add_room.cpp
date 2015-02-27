@@ -20,3 +20,9 @@ std::string Notify_Add_Room::get_room_name() {
   Any_Map& map = *data.get();
   return boost::any_cast<std::string>(map["room_name"]);
 }
+
+int Notify_Add_Room::get_room_max_user_count() {
+  Any_Map_Shared_Ptr data = this->get_data();
+  Any_Map& map = *data.get();
+  return boost::any_cast<int>(map["room_max_user_count"]);
+}

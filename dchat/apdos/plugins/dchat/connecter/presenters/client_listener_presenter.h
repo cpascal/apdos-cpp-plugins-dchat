@@ -10,6 +10,7 @@
 #include <apdos/plugins/dchat/connecter/models/rooms.h>
 #include <apdos/plugins/dchat/connecter/presenters/client_presenter.h>
 #include <apdos/plugins/dchat/connecter/models/room_users.h>
+#include <apdos/plugins/uuid/object_id.h>
 
 namespace apdos {
   namespace plugins {
@@ -38,6 +39,10 @@ namespace apdos {
           void on_res_user_chat(apdos::kernel::event::Event& event);
           void on_notify_user_chat(apdos::kernel::event::Event& event);
 
+          void increase_user_count(apdos::plugins::uuid::Object_Id& room_id);
+          void decrease_user_count(apdos::plugins::uuid::Object_Id& room_id);
+
+        private:
           Auth_Shared_Ptr auth;
           Rooms_Shared_Ptr rooms;
           Client_Presenter_Shared_Ptr client_presenter;

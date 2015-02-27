@@ -9,8 +9,6 @@ namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace models {
-        typedef boost::shared_ptr<apdos::plugins::uuid::Object_Id> Object_Id_Shared_Ptr;
-
         class User {
         public:
           User(Object_Id_Shared_Ptr id, std::string name);

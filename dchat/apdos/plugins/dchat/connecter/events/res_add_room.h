@@ -18,6 +18,7 @@ namespace apdos {
 
         std::string get_room_id();
         std::string get_room_name();
+        int get_room_max_user_count();
       };
     }
   }

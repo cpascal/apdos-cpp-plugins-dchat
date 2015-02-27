@@ -4,14 +4,14 @@
 #include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <apdos/kernel/actor/component.h>
-#include <apdos/kernel/actor/actor_connecter.h>
+#include <apdos/kernel/actor/connecters/actor_connecter.h>
 #include <apdos/plugins/uuid/object_id.h>
 
 namespace apdos {
   namespace plugins {
     namespace dchat_connecter {
       namespace presenters {
-        typedef boost::shared_ptr<apdos::kernel::actor::Actor_Connecter> Actor_Connecter_Shared_Ptr;
+        typedef boost::shared_ptr<apdos::kernel::actor::connecters::Actor_Connecter> Actor_Connecter_Shared_Ptr;
 
         class Client_Presenter: public apdos::kernel::actor::Component {
         public:

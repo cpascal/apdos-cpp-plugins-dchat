@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="models">
+      <UniqueIdentifier>{cee57d8f-3e13-4e83-ae8c-8f4735529563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="models\events">
+      <UniqueIdentifier>{cd577b39-fa79-4c53-95b8-994722f275ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="presenters">
+      <UniqueIdentifier>{bd2dd733-dbc5-48bd-8f26-04c37145e40c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\models\line_input.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\models\events\line_input_event.cpp">
+      <Filter>models\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\chat_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\wait_room_cmd_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\ts-cclient\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\models\line_input.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\models\events\line_input_event.h">
+      <Filter>models\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\chat_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\wait_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

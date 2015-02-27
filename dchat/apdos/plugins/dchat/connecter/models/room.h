@@ -11,17 +11,26 @@ namespace apdos {
       namespace models {
         class Room {
         public:
-          Room(apdos::plugins::uuid::Object_Id id, int num, std::string name);
+          Room(apdos::plugins::uuid::Object_Id id, int num, std::string name, int user_count, int max_user_count);
           ~Room();
 
           apdos::plugins::uuid::Object_Id get_id();
           int get_num();
           std::string get_name();
+          int get_user_count();
+          int get_max_user_count();
+
+          void increase_user_count();
+          void decrease_user_count();
+
+          virtual bool is_null() { return false; }
 
         private:
           apdos::plugins::uuid::Object_Id id;
           int num;
           std::string name;
+          int user_count;
+          int max_user_count;
         };
       }
     }
