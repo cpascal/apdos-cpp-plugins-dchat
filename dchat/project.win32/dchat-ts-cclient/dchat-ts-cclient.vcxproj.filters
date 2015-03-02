@@ -46,4 +46,7 @@
       <Filter>presenters</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dchat-ws-cclient\dchat-ws-cclient.vcxproj" />
+  </ItemGroup>
 </Project>

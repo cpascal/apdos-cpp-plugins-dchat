@@ -1,12 +1,11 @@
 #include <iostream>
-/*
 #include <string>
 #include <boost/version.hpp>
 #include <apdos/plugins/dchat/connecter/events/req_login.h>
 #include <apdos/plugins/dchat/connecter/events/res_login.h>
 #include <apdos/kernel/kernel.h>
 #include <apdos/kernel/actor/actor.h>
-#include <apdos/kernel/actor/actor_connecter.h>
+#include <apdos/plugins/ws_net/ws_actor_connecter.h>
 #include <apdos/plugins/dchat/connecter/presenters/client_presenter.h>
 #include <apdos/plugins/dchat/connecter/presenters/client_listener_presenter.h>
 #include <apdos/plugins/dchat/connecter/models/auth.h>
@@ -20,12 +19,11 @@
 
 using namespace std;
 using namespace boost;
-//using namespace boost::asio;
-//using namespace boost::asio::ip;
 
 using namespace apdos::kernel;
 using namespace apdos::kernel::event;
 using namespace apdos::kernel::actor;
+using namespace apdos::plugins::ws_net;
 using namespace apdos::plugins::dchat_connecter;
 using namespace apdos::plugins::dchat_connecter::models;
 using namespace apdos::plugins::dchat_connecter::presenters;
@@ -33,13 +31,12 @@ using namespace apdos::plugins::dchat_connecter::cclient::presenters;
 using namespace apdos::plugins::dchat_connecter::cclient::models;
 using namespace apdos::plugins::dchat_connecter::cclient::models::events;
 typedef boost::shared_ptr<Actor> Actor_Shared_Ptr;
-const char* HOST_ADDRESS = "tcp://angames2.iptime.org:20001";
 
-*/
+const char* HOST_ADDRESS = "ws://angames2.iptime.org:20001";
+
 int main() {
-  /*
 	Actor_Shared_Ptr actor = Kernel::get_instance()->new_object<Actor>("/sys/connecter");
-	boost::shared_ptr<Actor_Connecter> actor_connecter = actor->add_component<Actor_Connecter>();
+	boost::shared_ptr<Ws_Actor_Connecter> actor_connecter = actor->add_component<Ws_Actor_Connecter>();
 	
 	Actor_Shared_Ptr line_input_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/line_input");
 	boost::shared_ptr<Line_Input> line_input = line_input_actor->add_component<Line_Input>();
@@ -82,6 +79,5 @@ int main() {
 	actor_connecter->connect(HOST_ADDRESS);
 	cmd_presenter->poll();
 	actor_connecter->disconnect();
-  */
 	return 0;
 }

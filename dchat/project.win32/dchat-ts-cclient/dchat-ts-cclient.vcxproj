@@ -25,6 +25,9 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\cmd_presenter.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\ts-cclient\presenters\wait_room_cmd_presenter.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dchat-ws-cclient\dchat-ws-cclient.vcxproj" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AF764164-BAEB-4D6C-83E4-C0F0D8233275}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

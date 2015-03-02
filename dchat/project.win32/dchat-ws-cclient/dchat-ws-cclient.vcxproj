@@ -67,13 +67,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\projects\apdos-cpp\apdos\exts\boost_1_53_0;D:\projects\apdos-cpp\apdos;D:\sdk\cocos2d-x-2.2.4\cocos2dx;D:\sdk\cocos2d-x-2.2.4\cocos2dx\include;D:\sdk\cocos2d-x-2.2.4\cocos2dx\platform;D:\sdk\cocos2d-x-2.2.4\cocos2dx\platform\win32;D:\sdk\cocos2d-x-2.2.4\extensions\network;D:\sdk\cocos2d-x-2.2.4\extensions;D:\sdk\cocos2d-x-2.2.4\external\libwebsockets\win32\include;D:\sdk\cocos2d-x-2.2.4\cocos2dx\platform\third_party\win32\OGLES;D:\sdk\cocos2d-x-2.2.4\cocos2dx\kazmath\include;D:\projects\apdos-cpp-plugins-ws-net\ws_net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>apdos.lib;dchat-connecter.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>apdos.lib;apdos-plugins-dchat-connecter.lib;apdos-plugins-ws-net.lib;libExtensions.lib;libcocos2d.lib;libCocosDenshion.lib;opengl32.lib;glew32.lib;libBox2d.lib;libchipmunk.lib;libcurl_imp.lib;websockets.lib;pthreadVCE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);D:\sdk\cocos2d-x-2.2.4\Debug.win32;D:\projects\apdos-cpp\apdos\exts\boost_1_53_0\stage\lib_win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
