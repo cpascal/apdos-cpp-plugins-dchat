@@ -5,13 +5,12 @@
 #include <boost/thread.hpp>
 #include <boost/lockfree/spsc_queue.hpp>
 
-boost::lockfree::spsc_queue<std::string> commands(10);
+boost::lockfree::spsc_queue<std::string> commands(100);
 
 struct InputServer {
   void operator() () {
-    while(1) {
-      std::string command;
-      std::getline(std::cin, command);
+    std::string command;
+    while(std::getline(std::cin, command)) {
       commands.push(command);
     }
   }

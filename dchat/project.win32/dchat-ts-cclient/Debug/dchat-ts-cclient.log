@@ -1,4 +1,4 @@
-﻿Build started 3/2/2015 2:33:21 PM.
+﻿Build started 3/2/2015 3:10:01 PM.
      1>Project "D:\projects\apdos-cpp-plugins-dchat\dchat\project.win32\dchat-ts-cclient\dchat-ts-cclient.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\apdos-plugins-dchat-ts-cclient.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.25
+Time Elapsed 00:00:00.74

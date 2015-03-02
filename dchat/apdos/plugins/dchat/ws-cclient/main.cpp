@@ -79,5 +79,6 @@ int main() {
 	actor_connecter->connect(HOST_ADDRESS);
 	cmd_presenter->poll();
 	actor_connecter->disconnect();
-	return 0;
+
+  exit(0);
 }
