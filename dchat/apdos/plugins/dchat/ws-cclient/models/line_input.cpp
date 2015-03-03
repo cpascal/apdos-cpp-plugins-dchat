@@ -28,6 +28,9 @@ Line_Input::Line_Input() {
 Line_Input::~Line_Input() {
 }
 
+void Line_Input::set_component(Ws_Actor_Connecter_Shared_Ptr actor_connecter) {
+  this->actor_connecter = actor_connecter;
+}
 
 void Line_Input::poll() {
   is_stop = false;
@@ -37,6 +40,7 @@ void Line_Input::poll() {
 
   while(1) {
     CCDirector::sharedDirector()->mainLoop();
+    actor_connecter->update();
     if (is_stop)
       break;
     if (commands.pop(buffer)) {

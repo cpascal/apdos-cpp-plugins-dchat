@@ -36,11 +36,13 @@ using namespace apdos::plugins::dchat_connecter::cclient::models::events;
 typedef boost::shared_ptr<Actor> Actor_Shared_Ptr;
 
 void Ws_Client_Presenter::start(const std::string host_address) {
+  this->host_address = host_address;
   Actor_Shared_Ptr actor = Kernel::get_instance()->new_object<Actor>("/sys/connecter");
-  boost::shared_ptr<Ws_Actor_Connecter> actor_connecter = actor->add_component<Ws_Actor_Connecter>();
+  actor_connecter = actor->add_component<Ws_Actor_Connecter>();
 
   Actor_Shared_Ptr line_input_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/line_input");
   boost::shared_ptr<Line_Input> line_input = line_input_actor->add_component<Line_Input>();
+  line_input->set_component(actor_connecter);
 
   Actor_Shared_Ptr auth_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/auth");
   boost::shared_ptr<Auth> auth = auth_actor->add_component<Auth>();
@@ -50,7 +52,6 @@ void Ws_Client_Presenter::start(const std::string host_address) {
 
   Actor_Shared_Ptr room_users_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/room_users");
   boost::shared_ptr<Room_Users> room_users = room_users_actor->add_component<Room_Users>();
-
 
   Actor_Shared_Ptr client_presenter_actor = Kernel::get_instance()->new_object<Actor>(
     "/sys/presenters/client_presenter");
@@ -80,6 +81,7 @@ void Ws_Client_Presenter::start(const std::string host_address) {
   actor_connecter->connect(host_address);
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::CONNECTED, boost::bind(&Ws_Client_Presenter::on_res_connected, this, _1));
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::DISCONNECTED, boost::bind(&Ws_Client_Presenter::on_res_disconnected, this, _1));
+  actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::CONNECT_FAILED, boost::bind(&Ws_Client_Presenter::on_connect_failed, this, _1));
   client_listener_presenter->add_event_listener(Res_Login::RES_LOGIN, boost::bind(&Ws_Client_Presenter::on_res_login, this, _1));
   cmd_presenter->poll();
   actor_connecter->disconnect();
@@ -93,10 +95,13 @@ void Ws_Client_Presenter::on_res_disconnected(apdos::kernel::event::Event& event
   std::cout << "Disconnected" << std::endl;
 }
 
+void Ws_Client_Presenter::on_connect_failed(apdos::kernel::event::Event& event) {
+  std::cout << "Connect failed" << std::endl;
+  actor_connecter->connect(host_address);
+}
+
 void Ws_Client_Presenter::on_res_login(apdos::kernel::event::Event& event) {
   Res_Login* res_login = (Res_Login*)&event;
   std::cout << res_login->get_user_id() << std::endl;
   std::cout << res_login->get_user_name() << std::endl;
 }
-
-

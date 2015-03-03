@@ -15,7 +15,7 @@ using namespace apdos::plugins::dchat_connecter::cclient::presenters;
 
 typedef boost::shared_ptr<Actor> Actor_Shared_Ptr;
 
-const char* HOST_ADDRESS = "ws://angames2.iptime.org:20001";
+const char* HOST_ADDRESS = "ws://angames2.iptime.org:20002";
 
 int main() {
   Actor_Shared_Ptr actor = Kernel::get_instance()->new_object<Actor>("/sys/connecter");
