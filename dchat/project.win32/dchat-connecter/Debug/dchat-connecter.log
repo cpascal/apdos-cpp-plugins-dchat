@@ -1,41 +1,10 @@
-﻿Build started 3/3/2015 5:19:08 PM.
-     1>Project "D:\projects\apdos-cpp-plugins-dchat\dchat\project.win32\dchat-connecter\dchat-connecter.vcxproj" on node 4 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\apdos-plugins-dchat-connecter.lastbuildstate".
-       InitializeBuildStatus:
+﻿Build started 3/3/2015 5:46:34 PM.
+     1>Project "D:\projects\apdos-cpp-plugins-dchat\dchat\project.win32\dchat-connecter\dchat-connecter.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
          Creating "Debug\apdos-plugins-dchat-connecter.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp ..\..\apdos\plugins\dchat\connecter\events\notify_join_room.cpp ..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.cpp ..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.cpp ..\..\apdos\plugins\dchat\connecter\events\req_add_room.cpp ..\..\apdos\plugins\dchat\connecter\events\req_join_room.cpp ..\..\apdos\plugins\dchat\connecter\events\req_leave_room.cpp ..\..\apdos\plugins\dchat\connecter\events\req_login.cpp ..\..\apdos\plugins\dchat\connecter\events\req_logout.cpp ..\..\apdos\plugins\dchat\connecter\events\req_user_chat.cpp ..\..\apdos\plugins\dchat\connecter\events\res_add_room.cpp ..\..\apdos\plugins\dchat\connecter\events\res_join_room.cpp ..\..\apdos\plugins\dchat\connecter\events\res_leave_room.cpp ..\..\apdos\plugins\dchat\connecter\events\res_login.cpp ..\..\apdos\plugins\dchat\connecter\events\res_logout.cpp ..\..\apdos\plugins\dchat\connecter\events\res_user_chat.cpp ..\..\apdos\plugins\dchat\connecter\models\auth.cpp ..\..\apdos\plugins\dchat\connecter\models\null_room.cpp ..\..\apdos\plugins\dchat\connecter\models\null_user.cpp ..\..\apdos\plugins\dchat\connecter\models\room.cpp ..\..\apdos\plugins\dchat\connecter\models\rooms.cpp ..\..\apdos\plugins\dchat\connecter\models\room_user.cpp ..\..\apdos\plugins\dchat\connecter\models\room_users.cpp ..\..\apdos\plugins\dchat\connecter\models\user.cpp ..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.cpp ..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.cpp
-         client_presenter.cpp
-         client_listener_presenter.cpp
-     1>d:\projects\apdos-cpp-plugins-dchat\dchat\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.cpp(58): warning C4018: '<' : signed/unsigned mismatch
-         user.cpp
-         room_users.cpp
-         room_user.cpp
-         rooms.cpp
-         room.cpp
-         null_user.cpp
-         null_room.cpp
-         auth.cpp
-         res_user_chat.cpp
-         res_logout.cpp
-         res_login.cpp
-         res_leave_room.cpp
-         res_join_room.cpp
-         res_add_room.cpp
-         req_user_chat.cpp
-         req_logout.cpp
-         req_login.cpp
-         req_leave_room.cpp
-         Generating Code...
-         Compiling...
-         req_join_room.cpp
-         req_add_room.cpp
-         notify_user_chat.cpp
-         notify_leave_room.cpp
-         notify_join_room.cpp
-         notify_add_room.cpp
-         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\apdos\plugins\dchat\connecter\events\res_error.cpp
+         res_error.cpp
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\sdkwz1-1\documents\visual studio 2010\Projects\apdos-workspace\Debug\apdos-plugins-dchat-connecter.lib" /NOLOGO Debug\notify_add_room.obj
          Debug\notify_join_room.obj
@@ -48,6 +17,7 @@
          Debug\req_logout.obj
          Debug\req_user_chat.obj
          Debug\res_add_room.obj
+         Debug\res_error.obj
          Debug\res_join_room.obj
          Debug\res_leave_room.obj
          Debug\res_login.obj
@@ -67,8 +37,8 @@
        FinalizeBuildStatus:
          Deleting file "Debug\apdos-plugins-dchat-connecter.unsuccessfulbuild".
          Touching "Debug\apdos-plugins-dchat-connecter.lastbuildstate".
-     1>Done Building Project "D:\projects\apdos-cpp-plugins-dchat\dchat\project.win32\dchat-connecter\dchat-connecter.vcxproj" (rebuild target(s)).
+     1>Done Building Project "D:\projects\apdos-cpp-plugins-dchat\dchat\project.win32\dchat-connecter\dchat-connecter.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:27.73
+Time Elapsed 00:00:01.39

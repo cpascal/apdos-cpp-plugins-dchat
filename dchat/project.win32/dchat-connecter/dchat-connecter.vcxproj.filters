@@ -92,6 +92,9 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\null_room.h">
       <Filter>models</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_error.h">
+      <Filter>events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp">
@@ -171,6 +174,9 @@
     </ClCompile>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\null_room.cpp">
       <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_error.cpp">
+      <Filter>events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

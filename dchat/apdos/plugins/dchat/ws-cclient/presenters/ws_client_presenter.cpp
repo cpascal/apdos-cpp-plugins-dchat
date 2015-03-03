@@ -2,6 +2,7 @@
 #include <boost/version.hpp>
 #include <apdos/plugins/dchat/connecter/events/req_login.h>
 #include <apdos/plugins/dchat/connecter/events/res_login.h>
+#include <apdos/plugins/dchat/connecter/events/res_error.h>
 #include <apdos/kernel/kernel.h>
 #include <apdos/kernel/actor/actor.h>
 #include <apdos/plugins/ws_net/ws_actor_connecter.h>
@@ -83,6 +84,7 @@ void Ws_Client_Presenter::start(const std::string host_address) {
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::DISCONNECTED, boost::bind(&Ws_Client_Presenter::on_res_disconnected, this, _1));
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::CONNECT_FAILED, boost::bind(&Ws_Client_Presenter::on_connect_failed, this, _1));
   client_listener_presenter->add_event_listener(Res_Login::RES_LOGIN, boost::bind(&Ws_Client_Presenter::on_res_login, this, _1));
+  client_listener_presenter->add_event_listener(Res_Error::RES_ERROR, boost::bind(&Ws_Client_Presenter::on_res_error, this, _1));
   cmd_presenter->poll();
   actor_connecter->disconnect();
 }
@@ -104,4 +106,11 @@ void Ws_Client_Presenter::on_res_login(apdos::kernel::event::Event& event) {
   Res_Login* res_login = (Res_Login*)&event;
   std::cout << res_login->get_user_id() << std::endl;
   std::cout << res_login->get_user_name() << std::endl;
+}
+
+void Ws_Client_Presenter::on_res_error(apdos::kernel::event::Event& event) {
+  Res_Error* res_error = (Res_Error*)&event;
+  std::cout << "Error event occured" << std::endl;
+  std::cout << "code: " << res_error->get_error_code() << std::endl;
+  std::cout << "message: " << res_error->get_error_message() << std::endl;
 }

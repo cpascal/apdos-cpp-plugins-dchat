@@ -23,6 +23,7 @@ namespace apdos {
             void on_connect_failed(apdos::kernel::event::Event& event);
 
             void on_res_login(apdos::kernel::event::Event& event);
+            void on_res_error(apdos::kernel::event::Event& event);
 
           private:
             Ws_Actor_Connecter_Shared_Ptr actor_connecter;

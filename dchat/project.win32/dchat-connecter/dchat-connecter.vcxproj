@@ -76,6 +76,7 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_error.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\res_login.h" />
@@ -104,6 +105,7 @@
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_logout.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_user_chat.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_add_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_error.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_join_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_leave_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\res_login.cpp" />
