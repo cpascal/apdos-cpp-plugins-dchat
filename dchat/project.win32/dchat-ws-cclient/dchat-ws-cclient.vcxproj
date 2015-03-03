@@ -15,6 +15,7 @@
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\models\events\line_input_event.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\models\line_input.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\chat_room_cmd_presenter.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\ws_client_presenter.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\cmd_presenter.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\wait_room_cmd_presenter.cpp" />
   </ItemGroup>
@@ -22,6 +23,7 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\models\events\line_input_event.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\models\line_input.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\chat_room_cmd_presenter.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\ws_client_presenter.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\cmd_presenter.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\wait_room_cmd_presenter.h" />
   </ItemGroup>

@@ -28,6 +28,9 @@
       <Filter>presenters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\main.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\ws_client_presenter.cpp">
+      <Filter>presenters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\models\line_input.h">
@@ -43,6 +46,9 @@
       <Filter>presenters</Filter>
     </ClInclude>
     <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\wait_room_cmd_presenter.h">
+      <Filter>presenters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\ws-cclient\presenters\ws_client_presenter.h">
       <Filter>presenters</Filter>
     </ClInclude>
   </ItemGroup>
