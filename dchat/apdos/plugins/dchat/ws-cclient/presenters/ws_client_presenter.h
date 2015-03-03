@@ -17,6 +17,8 @@ namespace apdos {
           private:
             void on_res_connected(apdos::kernel::event::Event& event);
             void on_res_disconnected(apdos::kernel::event::Event& event);
+
+            void on_res_login(apdos::kernel::event::Event& event);
           };
         }
       }

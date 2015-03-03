@@ -80,6 +80,7 @@ void Ws_Client_Presenter::start(const std::string host_address) {
   actor_connecter->connect(host_address);
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::CONNECTED, boost::bind(&Ws_Client_Presenter::on_res_connected, this, _1));
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::DISCONNECTED, boost::bind(&Ws_Client_Presenter::on_res_disconnected, this, _1));
+  client_listener_presenter->add_event_listener(Res_Login::RES_LOGIN, boost::bind(&Ws_Client_Presenter::on_res_login, this, _1));
   cmd_presenter->poll();
   actor_connecter->disconnect();
 }
@@ -90,6 +91,12 @@ void Ws_Client_Presenter::on_res_connected(apdos::kernel::event::Event& event) {
 
 void Ws_Client_Presenter::on_res_disconnected(apdos::kernel::event::Event& event) {
   std::cout << "Disconnected" << std::endl;
+}
+
+void Ws_Client_Presenter::on_res_login(apdos::kernel::event::Event& event) {
+  Res_Login* res_login = (Res_Login*)&event;
+  std::cout << res_login->get_user_id() << std::endl;
+  std::cout << res_login->get_user_name() << std::endl;
 }
 
 
