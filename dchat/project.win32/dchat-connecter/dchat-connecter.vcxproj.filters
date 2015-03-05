@@ -71,12 +71,6 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room.h">
       <Filter>models</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_user.h">
-      <Filter>models</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_users.h">
-      <Filter>models</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\rooms.h">
       <Filter>models</Filter>
     </ClInclude>
@@ -152,12 +146,6 @@
       <Filter>models</Filter>
     </ClCompile>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room.cpp">
-      <Filter>models</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_user.cpp">
-      <Filter>models</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_users.cpp">
       <Filter>models</Filter>
     </ClCompile>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\rooms.cpp">

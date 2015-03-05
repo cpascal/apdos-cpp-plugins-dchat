@@ -11,7 +11,6 @@
 #include <apdos/plugins/dchat/connecter/presenters/client_listener_presenter.h>
 #include <apdos/plugins/dchat/connecter/models/auth.h>
 #include <apdos/plugins/dchat/connecter/models/rooms.h>
-#include <apdos/plugins/dchat/connecter/models/room_users.h>
 #include "models/line_input.h"
 #include "presenters/cmd_presenter.h"
 #include "presenters/wait_room_cmd_presenter.h"
@@ -49,10 +48,6 @@ int main() {
 	Actor_Shared_Ptr rooms_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/rooms");
 	boost::shared_ptr<Rooms> rooms = rooms_actor->add_component<Rooms>();
 
-  Actor_Shared_Ptr room_users_actor = Kernel::get_instance()->new_object<Actor>("/sys/models/room_users");
-  boost::shared_ptr<Room_Users> room_users = room_users_actor->add_component<Room_Users>();
-
-
 	Actor_Shared_Ptr client_presenter_actor = Kernel::get_instance()->new_object<Actor>(
     "/sys/presenters/client_presenter");
 	boost::shared_ptr<Client_Presenter> client_presenter = client_presenter_actor->add_component<Client_Presenter>();
@@ -60,7 +55,7 @@ int main() {
 
 	boost::shared_ptr<Client_Listener_Presenter> client_listener_presenter = 
     client_presenter_actor->add_component<Client_Listener_Presenter>();
-	client_listener_presenter->set_component(auth, rooms, room_users, client_presenter);
+	client_listener_presenter->set_component(auth, rooms, client_presenter);
 
 	Actor_Shared_Ptr wait_room_cmd_presenter_actor = Kernel::get_instance()->new_object<Actor>(
     "/sys/presenter/wait_room_cmd_presenter");
