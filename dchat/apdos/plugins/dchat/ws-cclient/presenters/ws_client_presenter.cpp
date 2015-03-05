@@ -13,7 +13,6 @@
 #include <apdos/plugins/dchat/connecter/models/room_users.h>
 #include <apdos/plugins/ws_net/ws_actor_connecter_event.h>
 #include "../models/line_input.h"
-#include "../presenters/cmd_presenter.h"
 #include "../presenters/wait_room_cmd_presenter.h"
 #include "../presenters/chat_room_cmd_presenter.h"
 #include "../models/events/line_input_event.h"
@@ -76,7 +75,7 @@ void Ws_Client_Presenter::start(const std::string host_address) {
   chat_room_cmd_presenter->set_components(client_presenter);
 
   Actor_Shared_Ptr cmd_presenter_actor = Kernel::get_instance()->new_object<Actor>("/sys/presenter/cmd_presenter");
-  boost::shared_ptr<Cmd_Presenter> cmd_presenter = cmd_presenter_actor->add_component<Cmd_Presenter>();
+  cmd_presenter = cmd_presenter_actor->add_component<Cmd_Presenter>();
   cmd_presenter->set_components(auth, line_input, wait_room_cmd_presenter, chat_room_cmd_presenter);
 
   actor_connecter->connect(host_address);
@@ -84,7 +83,7 @@ void Ws_Client_Presenter::start(const std::string host_address) {
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::DISCONNECTED, boost::bind(&Ws_Client_Presenter::on_res_disconnected, this, _1));
   actor_connecter->add_event_listener(Ws_Actor_Connecter_Event::CONNECT_FAILED, boost::bind(&Ws_Client_Presenter::on_connect_failed, this, _1));
   client_listener_presenter->add_event_listener(Res_Login::RES_LOGIN, boost::bind(&Ws_Client_Presenter::on_res_login, this, _1));
-  client_listener_presenter->add_event_listener(Res_Error::RES_ERROR, boost::bind(&Ws_Client_Presenter::on_res_error, this, _1));
+  client_listener_presenter->add_event_listener(Res_Error::RES_ERROR, boost::bind(&Ws_Client_Presenter::on_res_error, this, _1)); 
   cmd_presenter->poll();
   actor_connecter->disconnect();
 }

@@ -5,6 +5,7 @@
 #include <boost/shared_ptr.hpp>
 #include <apdos/kernel/actor/component.h>
 #include <apdos/plugins/ws_net/ws_actor_connecter.h>
+#include <apdos/plugins/dchat/ws-cclient/presenters/cmd_presenter.h>
 
 namespace apdos {
   namespace plugins {
@@ -12,6 +13,7 @@ namespace apdos {
       namespace cclient {
         namespace presenters {
           typedef boost::shared_ptr<apdos::plugins::ws_net::Ws_Actor_Connecter> Ws_Actor_Connecter_Shared_Ptr;
+          typedef boost::shared_ptr<apdos::plugins::dchat_connecter::cclient::presenters::Cmd_Presenter> Cmd_Presenter_Shared_Ptr;
 
           class Ws_Client_Presenter: public apdos::kernel::actor::Component {
           public:
@@ -27,6 +29,7 @@ namespace apdos {
 
           private:
             Ws_Actor_Connecter_Shared_Ptr actor_connecter;
+            Cmd_Presenter_Shared_Ptr cmd_presenter;
             std::string host_address;
           };
         }

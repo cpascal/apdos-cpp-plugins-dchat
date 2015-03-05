@@ -52,4 +52,7 @@
       <Filter>presenters</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\global_140702\client\libs\ck-chat-server\chat-server\proj.win32\chat-server-connecter\chat-server-connecter.vcxproj" />
+  </ItemGroup>
 </Project>
