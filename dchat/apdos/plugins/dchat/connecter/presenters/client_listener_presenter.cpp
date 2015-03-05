@@ -20,9 +20,11 @@ using namespace apdos::plugins::dchat_connecter::presenters;
 using namespace apdos::plugins::dchat_connecter::models;
 using namespace apdos::plugins::dchat_connecter;
 
-void Client_Listener_Presenter::set_component(Auth_Shared_Ptr auth, Rooms_Shared_Ptr rooms, Client_Presenter_Shared_Ptr client_presenter) {
+void Client_Listener_Presenter::set_component(Auth_Shared_Ptr auth, Rooms_Shared_Ptr rooms, 
+  Room_Users_Shared_Ptr room_users, Client_Presenter_Shared_Ptr client_presenter) {
   this->auth = auth;
   this->rooms = rooms;
+  this->room_users = room_users;
   this->client_presenter = client_presenter;
 
   this->add_event_listener(Res_Login::RES_LOGIN, boost::bind(&Client_Listener_Presenter::on_res_login, this, _1));
@@ -97,6 +99,7 @@ void Client_Listener_Presenter::on_res_join_room(apdos::kernel::event::Event& ev
   std::cout << "res join room. user name: " + e->get_user_name() << std::endl;
 
   boost::shared_ptr<Object_Id> room_id(new Object_Id(e->get_room_id()));
+  this->room_users->add_room_user(*room_id.get(), e->get_user_name());
   boost::shared_ptr<User> user = this->auth->get_login_user();
   user->join_room(room_id);
   this->increase_user_count(*room_id.get());
@@ -108,6 +111,8 @@ void Client_Listener_Presenter::on_notify_join_room(apdos::kernel::event::Event&
   std::cout << "notify join room. user name: " + e->get_user_name() << std::endl;
 
   Object_Id room_id(e->get_room_id());
+  if (*this->auth->get_login_user()->get_room_id().get() == room_id)
+    this->room_users->add_room_user(room_id, e->get_user_name());
   this->increase_user_count(room_id);
 }
 
@@ -115,6 +120,7 @@ void Client_Listener_Presenter::on_res_leave_room(apdos::kernel::event::Event& e
   Res_Leave_Room* e = (Res_Leave_Room*)&event;
   std::cout <<"res leave room. user name: " << e->get_user_name() << std::endl;
 
+  this->room_users->clear();
   boost::shared_ptr<User> user = this->auth->get_login_user();
   user->leave_room();
 
@@ -126,7 +132,10 @@ void Client_Listener_Presenter::on_notify_leave_room(apdos::kernel::event::Event
   Notify_Leave_Room* e = (Notify_Leave_Room*)&event;
   std::cout <<"notify leave room. user name: " << e->get_user_name() << std::endl;
 
+  Object_Id user_id(e->get_user_id());
   Object_Id room_id(e->get_room_id());
+  if (*this->auth->get_login_user()->get_room_id().get() == room_id)
+    this->room_users->remove_room_user(user_id);
   this->decrease_user_count(room_id);
 }
 
