@@ -99,8 +99,9 @@ void Client_Listener_Presenter::on_res_join_room(apdos::kernel::event::Event& ev
   std::cout << "res join room. user name: " + e->get_user_name() << std::endl;
 
   boost::shared_ptr<Object_Id> room_id(new Object_Id(e->get_room_id()));
-  this->room_users->add_room_user(*room_id.get(), e->get_user_name());
   boost::shared_ptr<User> user = this->auth->get_login_user();
+  // @TODO 현재 방에 들어 있는 유저정보를 불러와서 Room_Users의 정보를 갱신
+  this->room_users->add_room_user(*user->get_id(), e->get_user_name());
   user->join_room(room_id);
   this->increase_user_count(*room_id.get());
 }
@@ -111,8 +112,9 @@ void Client_Listener_Presenter::on_notify_join_room(apdos::kernel::event::Event&
   std::cout << "notify join room. user name: " + e->get_user_name() << std::endl;
 
   Object_Id room_id(e->get_room_id());
+  Object_Id user_id(*this->auth->get_login_user()->get_id());
   if (*this->auth->get_login_user()->get_room_id().get() == room_id)
-    this->room_users->add_room_user(room_id, e->get_user_name());
+    this->room_users->add_room_user(user_id, e->get_user_name());
   this->increase_user_count(room_id);
 }
 

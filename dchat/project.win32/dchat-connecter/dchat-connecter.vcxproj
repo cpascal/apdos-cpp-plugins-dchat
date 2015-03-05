@@ -87,6 +87,8 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\null_user.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\rooms.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_user.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_users.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\user.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.h" />
@@ -114,6 +116,8 @@
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\null_user.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\rooms.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_user.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_users.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\user.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_listener_presenter.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\presenters\client_presenter.cpp" />
