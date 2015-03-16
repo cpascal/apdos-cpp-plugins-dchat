@@ -95,6 +95,12 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\models\room_users.h">
       <Filter>models</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_chat_history.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_logout.h">
+      <Filter>events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp">
@@ -177,6 +183,12 @@
     </ClCompile>
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\models\room_users.cpp">
       <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_chat_history.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_logout.cpp">
+      <Filter>events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
