@@ -4,5 +4,5 @@
 using namespace apdos::plugins::uuid;
 using namespace apdos::plugins::dchat_connecter::models;
 
-Null_Room::Null_Room(): Room(Null_Object_Id(), 0, "", 0, 0) {
+Null_Room::Null_Room(): Room(Null_Object_Id(), 0, "", "", 0, 0) {
 }

@@ -12,7 +12,7 @@ namespace apdos {
         static const char* REQ_ADD_ROOM;
 
       public:
-        Req_Add_Room(std::string room_name);
+        Req_Add_Room(std::string room_type, std::string room_name);
       };
     }
 	}

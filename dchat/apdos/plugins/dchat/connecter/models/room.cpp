@@ -4,9 +4,10 @@
 using namespace apdos::plugins::dchat_connecter::models;
 using namespace apdos::plugins::uuid;
 
-Room::Room(Object_Id id, int num, std::string name, int user_count, int max_user_count) {
+Room::Room(Object_Id id, int num, std::string type, std::string name, int user_count, int max_user_count) {
   this->id = id;
   this->num = num;
+  this->type = type;
   this->name = name;
   this->user_count = user_count;
   this->max_user_count = max_user_count;
@@ -21,6 +22,10 @@ Object_Id Room::get_id() {
 
 int Room::get_num() {
   return this->num;
+}
+
+std::string Room::get_type() {
+  return this->type;
 }
 
 std::string Room::get_name() {

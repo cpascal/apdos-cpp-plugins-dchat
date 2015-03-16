@@ -60,6 +60,7 @@ void Client_Listener_Presenter::on_res_login(apdos::kernel::event::Event& event)
     const Any_Map_Shared_Ptr& room = boost::any_cast<Any_Map_Shared_Ptr >(rooms_data[i]);
     std::map<std::string, boost::any>& map = *room.get();
     this->rooms->add_room(Object_Id(boost::any_cast<std::string>(map["id"])), 
+                          boost::any_cast<std::string>(map["type"]),
                           boost::any_cast<std::string>(map["name"]),
                           boost::any_cast<int>(map["user_count"]),
                           boost::any_cast<int>(map["max_user_count"]));
@@ -80,8 +81,8 @@ void Client_Listener_Presenter::on_res_logout(apdos::kernel::event::Event& event
 void Client_Listener_Presenter::on_res_add_room(apdos::kernel::event::Event& event) {
   Res_Add_Room* e = (Res_Add_Room*)&event;
   Object_Id room_id(e->get_room_id());
-  this->rooms->add_room(room_id, e->get_room_name(), 0, e->get_room_max_user_count());
-  std::cout << "add room id is " + e->get_room_id() << std::endl;
+  this->rooms->add_room(room_id, e->get_room_type(), e->get_room_name(), 0, e->get_room_max_user_count());
+  std::cout << "add room id is " + e->get_room_id() << "/ type: " << e->get_room_type() <<  std::endl;
   this->client_presenter->join_room(room_id);
 }
 
@@ -89,7 +90,7 @@ void Client_Listener_Presenter::on_res_add_room(apdos::kernel::event::Event& eve
 void Client_Listener_Presenter::on_notify_add_room(apdos::kernel::event::Event& event) {
   Notify_Add_Room* e = (Notify_Add_Room*)&event;
 
-  this->rooms->add_room(Object_Id(e->get_room_id()), e->get_room_name(), 0, e->get_room_max_user_count());
+  this->rooms->add_room(Object_Id(e->get_room_id()), e->get_room_type(), e->get_room_name(), 0, e->get_room_max_user_count());
   std::cout << "notify add room id is " + e->get_room_id() << std::endl;
 }
 

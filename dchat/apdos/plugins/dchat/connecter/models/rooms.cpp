@@ -22,8 +22,8 @@ void Rooms::clear() {
   this->rooms->clear();
 }
 
-void Rooms::add_room(apdos::plugins::uuid::Object_Id room_id, std::string room_name, int user_count, int max_user_count) {
-  boost::shared_ptr<Room> room(new Room(room_id, gen_room_num(), room_name, user_count, max_user_count));
+void Rooms::add_room(apdos::plugins::uuid::Object_Id room_id, std::string room_type, std::string room_name, int user_count, int max_user_count) {
+  boost::shared_ptr<Room> room(new Room(room_id, gen_room_num(), room_type, room_name, user_count, max_user_count));
   this->rooms->push_back(room);
 }
 

@@ -5,6 +5,7 @@
 #include <apdos/plugins/dchat/connecter/events/req_join_room.h>
 #include <apdos/plugins/dchat/connecter/events/req_leave_room.h>
 #include <apdos/plugins/dchat/connecter/events/req_user_chat.h>
+#include <apdos/plugins/dchat/connecter/events/req_chat_history.h>
 
 using namespace apdos::kernel::actor;
 using namespace apdos::plugins::dchat_connecter::presenters;
@@ -23,8 +24,8 @@ void Client_Presenter::logout() {
   actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_logout);
 }
 
-void Client_Presenter::add_room(std::string room_name) {
-  Req_Add_Room req_add_room(room_name);
+void Client_Presenter::add_room(std::string room_type, std::string room_name) {
+  Req_Add_Room req_add_room(room_type, room_name);
   actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_add_room);
 }
 
@@ -41,4 +42,9 @@ void Client_Presenter::leave_room() {
 void Client_Presenter::user_chat(std::string message) {
   Req_User_Chat req_user_chat(message);
   actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_user_chat);
+}
+
+void Client_Presenter::chat_history(apdos::plugins::uuid::Object_Id room_id) {
+  Req_Chat_History req_chat_history(room_id, Client_Presenter::REQ_CHAT_HISTORY_COUNT);
+  actor_connecter->send_by_path("/sys", "/sys/presenters/server_presenter", req_chat_history);
 }

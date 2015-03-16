@@ -38,14 +38,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IncludePath>$(ProjectDir)\..\..;D:\projects\apdos-cpp\apdos\exts\boost_1_53_0;D:\projects\apdos-cpp\apdos;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\apdos-cpp\apdos\exts\boost_1_53_0;..\..\..\..\apdos-cpp\apdos;$(ProjectDir)\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -68,8 +69,10 @@
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_logout.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.h" />
+    <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_chat_history.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.h" />
     <ClInclude Include="..\..\apdos\plugins\dchat\connecter\events\req_login.h" />
@@ -97,8 +100,10 @@
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_add_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_join_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_leave_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_logout.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\notify_user_chat.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_add_room.cpp" />
+    <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_chat_history.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_join_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_leave_room.cpp" />
     <ClCompile Include="..\..\apdos\plugins\dchat\connecter\events\req_login.cpp" />

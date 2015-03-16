@@ -15,6 +15,12 @@ std::string Notify_Add_Room::get_room_id() {
   return boost::any_cast<std::string>(map["room_id"]);
 }
 
+std::string Notify_Add_Room::get_room_type() {
+  Any_Map_Shared_Ptr data = this->get_data();
+  Any_Map& map = *data.get();
+  return boost::any_cast<std::string>(map["room_type"]);
+}
+
 std::string Notify_Add_Room::get_room_name() {
   Any_Map_Shared_Ptr data = this->get_data();
   Any_Map& map = *data.get();

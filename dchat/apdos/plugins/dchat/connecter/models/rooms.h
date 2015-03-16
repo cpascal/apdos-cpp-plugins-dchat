@@ -20,7 +20,7 @@ namespace apdos {
           Rooms();
 
           void clear();
-          void add_room(apdos::plugins::uuid::Object_Id room_id, std::string room_name, int user_count, int max_user_count);
+          void add_room(apdos::plugins::uuid::Object_Id room_id, std::string room_type, std::string room_name, int user_count, int max_user_count);
 
           Room_List_Shared_Ptr get_rooms();
           Room_Shared_Ptr find_room_by_id(apdos::plugins::uuid::Object_Id  &room_id);

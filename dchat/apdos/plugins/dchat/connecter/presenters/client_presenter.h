@@ -15,14 +15,18 @@ namespace apdos {
 
         class Client_Presenter: public apdos::kernel::actor::Component {
         public:
+          static const int REQ_CHAT_HISTORY_COUNT = 3;
+
+        public:
           void set_component(Actor_Connecter_Shared_Ptr actor_connecter);
 
           void login(std::string user_name);
           void logout();
-          void add_room(std::string room_name);
+          void add_room(std::string room_type, std::string room_name);
           void join_room(apdos::plugins::uuid::Object_Id room_id);
           void leave_room();
           void user_chat(std::string message);
+          void chat_history(apdos::plugins::uuid::Object_Id room_id);
 
         private:
           Actor_Connecter_Shared_Ptr actor_connecter;

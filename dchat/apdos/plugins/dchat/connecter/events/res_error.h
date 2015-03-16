@@ -23,6 +23,8 @@ namespace apdos {
         static const int ERROR_ALREADY_EXIST_NAME = 2001;
         // 존재하지 않는 방입니다.
         static const int ERROR_NOT_EXIST_ROOM = 3000;
+        // 채팅방 허용인원을 초과하였습니다.
+        static const int ERROR_ROOM_IS_FULL = 3001;
         // 이미 존재하는 Crouter shard_id 입니다.
         static const int ERROR_EXIST_CROUTER_SHAR_ID = 4000;
 
